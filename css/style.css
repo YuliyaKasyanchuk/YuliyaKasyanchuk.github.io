@@ -10,6 +10,7 @@ body{
 	width: 100%;
 	max-width: 1400px;
 	box-sizing: border-box;
+	margin:0 auto;
 }
 a, p{
 	text-decoration: none;
