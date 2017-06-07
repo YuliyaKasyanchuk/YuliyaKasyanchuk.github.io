@@ -1,37 +1,39 @@
 	@font-face {
-			font-family: "ArvoRegular";
-			src: url("../fonts/ArvoRegular/ArvoRegular.eot");
-			src: url("../fonts/ArvoRegular/ArvoRegular.eot?#iefix")format("embedded-opentype"),
-			url("../fonts/ArvoRegular/ArvoRegular.woff") format("woff"),
-			url("../fonts/arvo.regular.ttf") format("truetype");
+			font-family: "BebasRegular";
+			src: url("../fonts/BebasRegular.eot");
+			src: url("../fonts/BebasRegular.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/BebasRegular.woff") format("woff"),
+			url("../fonts/BebasRegular.ttf") format("truetype");
 			font-style: normal;
 			font-weight: normal;
+			text-transform: uppercase;
+
 	}
-.main-block{
-	background-color: #f3f5f7;
-	padding-bottom: 100px;
+.text-box{
+	padding-top: 2rem;
 }
-.title{
-	font: normal 30px/82px  "ArvoRegular", serif;
-	color:  #3b3f6a;
-	text-align: center;
-	margin-bottom: 100px;
+.result {
+	font-family: 'Lato', sans-serif;
+	margin-bottom: 0;
+	margin-top: 3rem;
 }
-.center{
+.fonts {
+	font-size: 2rem;
 	text-align: center;
+	padding: 2rem;
 }
-.title2{
-	font: normal 22px/30px  "ArvoRegular", serif;
-	color:  #3b3e6a;
-	text-align: center;
-	vertical-align: top;
+small {
+	font-size: 1.3rem;
 }
-p{
-	font: normal 20px/30px 'Noto Sans', sans-serif;
-	color: #686b8b;
-	text-align: center;
-	margin: 0;
-	padding: 0;
-	vertical-align: top;
-	padding-bottom: 20px;
+.open-sans{
+	font-family: 'Open Sans', sans-serif;
+}
+.lato{
+	font-family: 'Lato', sans-serif;
+}
+.lobster{
+	font-family: 'Lobster', cursive;
+}
+.bebas{
+	font-family: 'BebasRegular', sans-serif;
 }
