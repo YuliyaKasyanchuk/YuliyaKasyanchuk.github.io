@@ -5,12 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Target</title>
+    <title>Animation</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Overpass:400,900" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -21,69 +20,82 @@
     <![endif]-->
   </head>
   <body>
-   <div class="container">
-   <div class="main-menu">
-   <div class="row">
-   
-     
-   
-     <div class="col-md-3">
-     <a href="#">
-       <svg xmlns="http://www.w3.org/2000/svg" width="141" height="75" viewBox="0 0 393.251 209.396"><path d="M345.763 92.984c-7.427-.408-14.748-.648-21.953-.736-71.166-.85-131.16 13.23-170.34 25.88-46.794 15.125-74.937 31.547-75.237 31.732-4.03 2.36-2.115 7.496 3.014 5.22 1.68-.747 28.156-16.24 74.34-31.128 38.668-12.477 97.847-26.37 168.05-25.53 7.152.087 19.696.632 21.792.733 4.367.214 5.062-5.884.333-6.17zM90.317 116.884c7.98.02 15.233-9.89 20.304-21.783 8.17-4.673 13.975-9.066 19.703-16.222-2.796 9.238-6.3 19.914-7.134 22.662-1.545 5.088 4.396 5.916 5.78 1.348.277-.917 1.394-4.177 1.685-5.05 6.078-18.197 14.017-23.77 24.9-31.157 2.93-1.987.524-5.642-2.478-4.147-4.29 2.135-12.807 9.016-16.38 13.987 2.118-6.9 2.548-8.142 3.362-10.99 1.447-5.077-4.172-6.355-5.787-.653-2.64 9.314-12.298 17.693-21.446 23.418 2.945-11.553 1.354-23.758-6.61-23.775-5.38-.012-12.053 5.904-17.07 14.938-5.908 4.133-17.752 14.766-30.306 27.59l19.95-65.82c1.383-5.41-4.894-5.86-6.33-1.09-5.396 17.895-44.52 82.294-58 82.294-2.214 0-2.876-2.338-2.876-6.12 0-20.83 16.828-58.06 23.133-73.284 1.205-2.91-.994-4.705-3.075-4.705-2.115 0-2.813.908-3.693 2.89C19.372 60.514 4.52 94.24 4.52 115.886c0 8.12 2.504 13.156 8.765 13.156 8.917 0 18.477-11.287 27.21-23.212 11.33-15.472 17.73-27.042 23.31-36.73-2.91 8.99-8.614 28.895-14.664 48.286C25.147 143.56 0 176.82 0 196.812c0 7.842 4.61 12.584 10.63 12.584 14.474 0 23.838-21.723 31.226-46.22 6.188-20.522 11.58-38.27 13.504-44.62 10.14-10.975 22.995-23.32 29.238-28.533-4.083 12.838-2.786 26.84 5.72 26.86zm15.394-46.168c4.377 0 3.827 10.773-.158 21.352-1.656.56-3.548.875-4.876.875-13.992 0-3.908-21.742 5.035-22.227zM89.82 94.12c1.55 2.544 5.228 4.196 8.808 4.196 1.27 0 3.004-.16 4.45-.46-3.737 7.75-8.155 13.323-11.393 13.323-3.24 0-4.478-8.395-1.865-17.06zM7.42 195.336c0-16.883 23.423-47.193 37.882-65.21-2.524 6.153-18.26 71.99-33.863 71.99-3.044 0-4.02-2.42-4.02-6.78zM389.458 57.115c-6.213 1.1-36.2 14.594-47.912 14.594-5.658 0-10.367-.944-12.337-5.09 9.655-4.69 26.64-16.622 26.64-28.153 0-4.92-3.71-8.184-9.2-8.184-13.01 0-26.45 20.406-24.475 34.057-3.613 1.293-7.287 1.918-10.83 1.918-4.148 0-7.527-1.46-9.388-4.95 12.946-14.802 21.283-38.864 21.25-52.01-.015-5.63-.815-9.388-4.694-9.296-12.076.288-23.86 34.895-23.86 54.277 0 2.364.612 4.978.91 6.647-5.948 6.91-16.604 12.94-16.604 2.715 0-2.645 1.473-7.63 2.254-10.137 1.846-5.924-4.64-6.508-5.817-2.443-2.737 9.457-6.407 16.434-11.812 19.773-4.033 2.492-8.53 1.793-8.518-2.912.018-8.697 10.776-23.285 25.317-24.463 4.036-.326 3.688-5.055-1.23-5.055-14.35 0-26.122 14.227-29.695 24.3-2.02 5.69-5.99 12.65-12.102 12.65-3.528 0-6.383-2.92-6.394-8.4-.01-4.757 2.16-12.06 4.543-19.84.62-2.024 8.848-29.245 8.848-29.245 1.59-5.412-4.812-5.936-6.164-1.348L226.98 53.626c-4.48 14.762-12.886 26.967-20.025 26.914-2.002-.016-3.887-1.11-3.887-3.967 0-8.907 9.896-21.053 18.297-23.184 2.52-.64 2.56-4.632-.97-4.632-6.486 0-14.77 7.006-19.954 15.94-7.01 12.075-17.516 22.587-26.24 22.587-4.264 0-6.056-3.297-6.056-7.498 0-10.43 9.873-16.76 18.16-21.572 3.046-1.768 2.318-5.654-1.764-4.61-3.46.884-11.855 5.718-17.268 13.616 0 0 1.906-6.394 2.646-8.845 5-16.545 8.677-28.674 8.854-29.244 1.487-4.796-4.7-6.17-6.164-1.347-.117.387-18.697 62.033-20.32 67.096-.87 2.708.682 4.31 2.467 4.335 1.455.02 3.077-.94 3.71-2.988.306-.984 3.995-13.176 3.995-13.176.607 6.49 5.75 9.49 10.998 9.49 6.762 0 15.987-5.37 23.08-14.23.708 5.02 4.1 7.672 8.302 7.672 8.412 0 16.11-6.604 20.597-16.834.536 14.367 17.498 13.838 23.494 3.586 1.385 2.918 4.42 4.7 8.61 4.7 6.153 0 11.09-3.6 15.5-9.5.622 4.356 4.608 6.183 8.15 6.183 4.462 0 9.95-2.377 16.433-8.447 2.992 4.2 8.123 5.72 13.986 5.72 3.757 0 7.856-.854 11.993-2.325 2.924 6.074 9.31 7.83 16.887 7.83 14.852 0 41.022-12.582 50.943-15.096 2.67-.675 2.708-5.513-1.975-4.685zM314.888 8c2.275-2.583 3.2-2.085 3.234.538.16 12.2-7.637 34.47-17.948 47.887-.22-15.043 8.97-41.9 14.714-48.424zm13.244 53.222c0-10.113 10.63-26.11 18.687-26.12 2.39-.005 3.52 1.35 3.52 3.067 0 7.583-13.944 19.27-22.198 23.59-.004-.178-.01-.354-.01-.538z"></path></svg>
-      </a>
-     </div>
-     <div class="col-md-9">
-    
-         
-       
-     </div>
-     <!-- <div class="btn"> -->
-     <a href="#modal" class="btn"><i class="fa fa-bars" aria-hidden="true"></i></a>
-       <!-- </div> -->
-       <div class="popup" id="modal">
-         <a href="#close" class="popup-close">&times;</a>
-      
-       <ul class="menu-items" id="menu-items">
-         <li class="menu-items_menu-item"> <a href="#">FASHION</a></li>
-         <li class="menu-items_menu-item"> <a href="#">BEAUTY </a></li>
-         <li class="menu-items_menu-item"> <a href="#">LIVING </a></li>
-         <li class="menu-items_menu-item"> <a href="#">HAPPENINGS </a></li>
-         <li class="menu-items_menu-item"> <a href="#">INFLUENCERS</a></li>
-       </ul>
-        </div>
-      
-         <div class="main-wrapper">
-           <a href="#modal-2" class="button">More</a>
-           
-  
-
-              <div class="modal" id="modal-2">
-                <a href="#close" class="close">&times;</a>
-                <section>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente quis illum, voluptatem odit ut aut provident, perferendis, accusantium saepe ipsum eum tenetur corporis accusamus dicta molestias molestiae nemo pariatur illo?</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente quis illum, voluptatem odit ut aut provident, perferendis, accusantium saepe ipsum eum tenetur corporis accusamus dicta molestias molestiae nemo pariatur illo?</p>
-              </section>
-              </div>
-            
-            
-         </div>
-    
-     </div>
-     </div>
-   
-   </div>
-  <!--    <div class="row">
-       <div class="col-md-12">
-         <div class="main-wrapper">
-           
+   <header>
+     <div class="header-top">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-3 wow lightSpeedIn"><p>Видео-ролики для бизнеса в Казани</p></div>
+           <div class="col-md-offset-4 col-md-4">
+              <a href="#" class="phone-number">8 (843) 999-99-99</a>
+              <a href="#" class="btn">Заказать звонок</a>
+           </div>
          </div>
        </div>
-     </div> -->
+     </div>
+     <div class="header-menu">
+       <div class="row">
+         <div class="col-md-12">
+           <ul>
+             <li>
+               <a class="menu-item" href="#">Главная</a>
+               <a class="menu-item" href="#">О нас</a>
+               <a class="menu-item" href="#">Наши клиенты</a>
+               <a class="menu-item" href="#">Виды роликов</a>
+               <a class="menu-item" href="#">Портфолио</a>
+               <a class="menu-item" href="#">Цены</a>
+               <a class="menu-item" href="#">Контакты</a>
+             </li>
+           </ul>
+         </div>
+       </div>
+     </div>
+   </header>
+   <div class="main-wrapper">
+     <div class="about-block">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-12"></div>
+           <h1 class="company-title wow zoomIn" >Beam Light</h1>
+           <h2 class="wow bounceInLeft">Создание видео-роликов и проведение съемки </h2>
+           <p class="wow bounceInRight">для решения маркетинговых, имиджевых <br> и презентационных задач</p>
+           <p class="small wow bounceInLeft">Посмотрите короткое видео о нашей команде</p>
+          
+           <a href="#" class="btn-blue wow rotateIn">смотреть видео</a>
+            <img src="img/arrow.png" class="arrow" alt="">
+           <p class="small">Листайте вниз, чтобы узнать больше</p>
+           <img class="mouse" src="img/mouse.svg" alt="">
+         </div>
+       </div>
+     </div>
+     <div class="plus-block">
+     <h3 class="wow flash">Немного о BeamLight</h3>
+       <div class="container">
+         <div class="row">
+           <div class="col-md-offset-1 col-md-4">
+           <div class="border">
+           <img class="wow fadeInLeft" src="img/about-our-company/about-us.svg" alt="">
+             <h4>Чем мы занимаемся</h4>
+            </div >
+              <p class="wow bounceInLeft">Сегодня видеоролик способен решать сотни различных задач! Мы создаем видеорекламу, которая продает лучше любого менеджера. Мы делаем презентационные ролики, которые способны рассказать и показать больше, чем любая многочасовая лайв-презентация. А наши корпоративные и имиджевые видео позволяют эффективно продемонстрировать лучшие стороны любого продукта, бизнеса или организации.</p>
+           </div>
+           <div class="col-md-offset-2 col-md-4">
+           <div class="border">
+           <img class="wow fadeInRight" src="img/about-our-company/our-team.svg" alt="">
+           <h4>Наша команда</h4>
+            </div>
+            <p class="wow bounceInRight">В нашей команде только творческие люди, у которых за плечами большой опыт в создании видеороликов, репортажной съёмки, составления сценариев и качественном видео-монтаже. В своей работе мы используем только современную и профессиональную технику
+Вместе мы - команда профессионалов своего дела.</p>
+         </div>
+       </div>
+     </div>
    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+   <script src="js/wow.min.js"></script>
+      <script>
+        new WOW().init();
+      </script>
   </body>
 </html>
