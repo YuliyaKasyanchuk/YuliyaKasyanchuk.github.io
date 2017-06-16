@@ -1,34 +1,34 @@
 @font-face {
-  font-family: 'Panton-BlackCaps';
-  src: url("../fonts/Panton-BlackCaps.otf");
+  font-family: 'P22UndergroundCYPro-Heavy';
+  src: url("../fonts/P22UndergroundCYPro-Heavy.otf");
 }
 
 @font-face {
-  font-family: 'Panton-LightCaps';
-  src: url("../fonts/Panton-LightCaps.otf");
+  font-family: 'P22UndergroundCYPro-Medium';
+  src: url("../fonts/P22UndergroundCYPro-Medium.otf");
 }
 
-.main-font-bold,
-.main-font-light {
-  font-family: 'Panton-LightCaps',sans-serif;
-  font-weight: 400;
-  font-size: 10rem;
+@font-face {
+  font-family: 'P22UndergroundCYPro-Thin';
+  src: url("../fonts/P22UndergroundCYPro-Thin.otf");
 }
 
-.main-font-bold {
-  font-family: 'Panton-BlackCaps',sans-serif;
+@font-face {
+  font-family: 'P22UndergroundCYPro-Book';
+  src: url("../fonts/P22UndergroundCYPro-Book.otf");
 }
 
-body {
+hmtl {
+  font-size: 10px;
   width: 100%;
   height: 100%;
-  color: #363636;
-  overflow-x: hidden;
+  font-family: 'P22UndergroundCYPro-Book',san-serif;
 }
 
-.header-menu ul,
 h1,
 h2,
+h3,
+h4,
 p {
   margin: 0;
   padding: 0;
@@ -36,184 +36,329 @@ p {
 
 a,
 a:hover {
-  text-decoration: none;
-}
-
-h1,
-h2 {
-  font-family: 'Panton-LightCaps',sans-serif;
-  font-weight: 400;
-  font-size: 8rem;
   color: #fff;
-  padding: 150px 0 0;
 }
 
-h2 {
-  font-family: 'Panton-BlackCaps',sans-serif;
-  font-size: 2.5rem;
-  font-weight: 700;
-  padding: 0 0 30px;
+.clearfix {
+  clear: both;
 }
 
-.header-menu,
-h1,
-h2,
-h3 {
-  text-align: center;
-}
-
-.header-top .phone-number,
-.header-top p,
-h3,
-h4 {
-  font-family: 'Panton-BlackCaps',sans-serif;
-  font-weight: 400;
-}
-
-h3 {
-  padding-bottom: 50px;
-  font-size: 2.25rem;
-}
-
-.header-top .phone-number,
-.header-top p,
-h4 {
-  font-size: 1.88rem;
-}
-
-.header-top {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.header-top .phone-number,
-.header-top p {
-  padding-top: 5rem;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-.header-top .phone-number {
-  padding-top: 2rem;
-  font-size: 1.88rem;
-  line-height: 3rem;
-  font-weight: 700;
-  display: block;
-  color: #363636;
-}
-
-.about-block .small,
-.about-block p,
-.header-top .btn {
-  font-family: 'Panton-LightCaps',sans-serif;
-  font-weight: 600;
-}
-
-.header-top .btn {
-  line-height: 3.2rem;
-  text-align: center;
-  display: block;
-  border: 1px solid #363636;
-  width: 180px;
-  padding: 2px 10px;
-  margin: 0 auto;
-  border-radius: 10px;
-  font-size: 1.6rem;
-  color: #363636;
-}
-
-.header-top .btn:hover {
-  background-color: #363636;
-  color: #fff;
-  transition: 1s ease;
-}
-
-.header-menu {
-  width: 100%;
-  height: 60px;
-  background-color: #363636;
+.main-wrapper,
+.main-wrapper .header,
+.main-wrapper .header .btn {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-.header-menu ul {
-  vertical-align: top;
-}
-
-.header-menu ul li {
-  list-style-type: none;
-}
-
-.header-menu ul li .menu-item {
-  height: 60px;
-  padding: 0 10px;
+.main-wrapper {
+  width: 100%;
+  height: auto;
+  background: url("../img/bg.jpg") no-repeat center;
+  -webkit-background-size: cover;
+  background-size: cover;
   color: #fff;
-  font-size: 1.8rem;
-  line-height: 60px;
-  font-weight: 400;
+  padding-bottom: 5rem;
+  margin: 0 auto;
 }
 
-.header-menu ul li .menu-item:hover {
-  border-bottom: 3px solid #fff;
-  padding-bottom: 16px;
-}
-
-.about-block {
-  background: url("../img/main-bg.jpg");
+.main-wrapper h1 {
+  font: 800 3.7rem/4.5rem 'P22UndergroundCYPro-Heavy',san-serif;
   text-align: center;
-  padding-bottom: 100px;
-  position: relative;
+  color: #ff3;
+  text-transform: uppercase;
+  margin-bottom: 5rem;
 }
 
-.about-block .small,
-.about-block p {
-  font-size: 1.5rem;
+.main-wrapper .header {
+  padding: 5rem 0;
+}
+
+.main-wrapper .header img {
+  display: inline-block;
+  margin-right: .5rem;
+  float: left;
+}
+
+.main-wrapper .header h4 {
+  display: inline-block;
+  font: 800 1.8rem/2.2rem 'P22UndergroundCYPro-Heavy',san-serif;
+}
+
+.main-wrapper .header .small {
+  display: block;
+  font: 100 1.2rem/1.6rem 'P22UndergroundCYPro-Thin',san-serif;
+  margin-left: 10.5rem;
+}
+
+.main-wrapper .header .btn {
+  border: 2px solid #fff;
+  padding: 1.3rem 1.5rem;
+  border-radius: .5rem;
+  display: inline-block;
+  font: 100 1.5rem/1.5rem 'P22UndergroundCYPro-Thin',san-serif;
+}
+
+.main-wrapper .header .tel-num {
+  display: inline-block;
+  font: 800 2.5rem/5.6rem 'P22UndergroundCYPro-Heavy',san-serif;
+  text-decoration: none;
   color: #fff;
 }
 
-.about-block .small {
-  margin-top: 50px;
-  font-family: Arial,sans-serif;
-  font-weight: 400;
-}
-
-.about-block .btn-blue {
-  color: #fff;
-  font-family: 'Panton-BlackCaps',sans-serif;
-  font-weight: 400;
-  font-size: 1.88rem;
-  line-height: 9rem;
-  padding: 15px 25px;
-  border-radius: 30px;
-  background-color: #059feb;
+.main-wrapper .header .tel-num:hover,
+a,
+a:hover {
   text-decoration: none;
 }
 
-.about-block .mouse {
-  margin-top: 50px;
+.profits .profit {
+  margin-top: 70px;
+  margin-bottom: 2rem;
+  min-height: 160px;
+  text-align: center;
 }
 
-.about-block .arrow {
+.profits .profit .item {
+  background-color: #ff3;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.profits .profit p {
+  font: 300 1.8rem/2.2rem 'P22UndergroundCYPro-Book',san-serif;
+  margin-top: .5rem;
+  color: #333;
+}
+
+.info,
+.profits {
+  margin: 0 auto;
+}
+
+.form,
+.info,
+.info .desc {
+  display: block;
+}
+
+.form .block input,
+.info .desc .arrow,
+.info .info-p {
+  display: inline-block;
+}
+
+.info .info-p {
+  font: 300 2rem/3.5rem 'P22UndergroundCYPro-Book',san-serif;
+}
+
+.form {
+  width: 42rem;
+  height: 41.3rem;
+  background-color: #fff;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+}
+
+.form p {
+  color: #333;
+  font: 300 2.2rem/2.5rem 'P22UndergroundCYPro-Book',san-serif;
+  padding: 5rem;
+}
+
+.form .block,
+.form p {
+  text-align: center;
+}
+
+.form .block .bg {
+  background-color: #333;
+  width: 5.9rem;
+  height: 5.9rem;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flex;
+  display: -o-inline-flex;
+  display: inline-flex;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.form .block input {
+  height: 5.9rem;
+  width: 28rem;
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  margin-left: -.5rem;
+  outline: 0;
+  padding-left: 2rem;
+}
+
+.form .block input:focus {
+  border: 1px solid #333;
+}
+
+.form .block input i {
+  color: #fff;
+  width: 1rem;
+  height: 1.1rem;
+}
+
+.form .btn-form,
+.money {
+  margin: 0 auto;
+  display: block;
+}
+
+.form .btn-form {
+  font: 300 1.5rem/1.5rem 'P22UndergroundCYPro-Book',san-serif;
+  color: #333;
+  background-color: #ff3;
+  text-align: center;
+  width: 34rem;
+  height: 5rem;
+  padding: 2rem;
+}
+
+.money {
   position: absolute;
-  bottom: 300px;
-  right: 500px;
+  bottom: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.plus-block {
-  text-align: left;
-  margin-top: 100px;
+@media (max-width:1024px) {
+  .profits {
+    margin: 0 auto;
+  }
+
+  .info .btn-form {
+    width: 28rem;
+  }
+
+  .main-wrapper {
+    padding-bottom: 10rem;
+  }
+
+  .money {
+    margin: 0 auto;
+    display: block;
+    position: absolute;
+    bottom: -15rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
-.plus-block p {
-  text-align: left;
-  font-weight: 600;
-  font-size: 1.125rem;
-}
+@media (max-width:760px) {
+  html {
+    font-size: 8px;
+  }
 
-.plus-block .border {
-  border-left: 5px solid #059feb;
-  padding-left: 10px;
+  .form {
+    width: 30rem;
+    height: auto;
+  }
+
+  .form .block {
+    text-align: center;
+  }
+
+  .form .block .bg {
+    background-color: #333;
+    width: 4rem;
+    height: 4rem;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: -o-inline-flex;
+    display: inline-flex;
+    justify-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  .form .block input {
+    display: inline-block;
+    height: 4rem;
+    width: 18rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    margin-left: -.5rem;
+    outline: 0;
+    padding-left: 2rem;
+  }
+
+  .form .block input:focus {
+    border: 1px solid #333;
+  }
+
+  .form .block input i {
+    color: #fff;
+    width: 1rem;
+    height: 1.1rem;
+  }
+
+  .profits {
+    margin: 0 auto;
+  }
+
+  .profits .profit {
+    min-height: 5rem;
+    margin-top: 1rem;
+  }
+
+  .header,
+  .info {
+    text-align: center;
+  }
+
+  .header img {
+    float: none!important;
+  }
+
+  .header h4 {
+    display: inline-block;
+    font: 800 1.8rem/2.2rem 'P22UndergroundCYPro-Heavy',san-serif;
+  }
+
+  .header .small {
+    display: block;
+    font: 100 1.2rem/1.6rem 'P22UndergroundCYPro-Thin',san-serif;
+  }
+
+  .header .btn {
+    margin-top: 3rem;
+  }
+
+  .header .tel-num {
+    display: inline-block;
+    font: 800 2.5rem/5.6rem 'P22UndergroundCYPro-Heavy',san-serif;
+    color: #fff;
+  }
+
+  .header .tel-num,
+  .header .tel-num:hover {
+    text-decoration: none;
+  }
+
+  .main-wrapper {
+    padding-bottom: 20rem;
+  }
+
+  .money {
+    bottom: -25rem;
+    left: 50%;
+  }
 }
