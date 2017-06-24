@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Video-fon</title>
+    <title>Parallax</title>
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -20,80 +21,144 @@
 </head>
 
 <body>
-    <section data-vide-bg="video/ocean">
-        <h4>Content Description</h4>
-        <h1>See the world through our product</h1>
-        <p>Get The Most Converstion Rate Easily.</p>
-        <img src="img/video-iicon.png" alt="">
-        <form action="#">
-            <input type="text" placeholder="Your Name">
-            <input type="text" placeholder="Email Address">
-            <a href="#" class="btn">Subscribe »</a>
-        </form>
-        <p class="small">* We don’t share your personal
-            <br> info with anyone Check out our <span class="green"> Policy </span> & for more information <span class="green"> Contact Us.</span></p>
-    </section>
-    <div class="main-menu">
-        <div class="container-fluid">
+    <div class="header">
+        <div class="container">
             <div class="row">
-                <div class="col-md-8">
-                    <a href="#" class="logo"><img src="img/logo.png" alt=""></a>
-                    <ul class="main-menu_list">
-                        <li class="main-menu_item"><a href="#">SERVICES</a></li>
-                        <li class="main-menu_item"><a href="#">ABOUT</a></li>
-                        <li class="main-menu_item"><a href="#">PORTFOLIO </a></li>
-                        <li class="main-menu_item"><a href="#">PRICING</a></li>
-                        <li class="main-menu_item"><a href="#">TEAM </a></li>
-                        <li class="main-menu_item"><a href="#">TESTIMONIAL</a></li>
-                    </ul>
+                <div class="col-md-7">
+                    <a href="#" class="logo"><img src="img/LOGO.png" alt=""></a>
                 </div>
-                <div class="col-md-4">
-                    <a href="#" class="social-links">
-                        <img src="img/fb.png" alt="">
-                    </a>
-                    <a href="#" class="social-links">
-                        <img src="img/twitter'.png" alt="">
-                    </a>
-                    <a href="#" class="social-links">
-                        <img src="img/Ellipse.png" alt="">
-                    </a>
+                <div class="col-md-5">
+                    <ul class="main-menu">
+                        <li class="main-menu_list"><a href="#">How it works</a></li>
+                        <li class="main-menu_list"><a href="#">About Us</a></li>
+                        <li class="main-menu_list"><a href="#">Contact Us</a></li>
+                        <li class="main-menu_list"><a href="#">Blog</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
     <div class="wrapper">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row">
-                <div class="col-md-12">
-                    <img src="img/icon1.png" alt="">
-                    <p>PRODUCT FEATURES</p>
-                    <h2>What we <span class="green">do</span>  </h2>
+                <div id="scene" data-relative-input="true" data-limit-y="50">
+                    <div class="layer" data-depth="0.90"><img src="img/Vector Smart Object copy.png" class="img-1 par"></div>
+                    <div class="layer" data-depth="1.20"><img src="img/3.png" class="img-3 par"></div>
+                    <div class="layer" data-depth="1.50"><img src="img/2.png" class="img-2 par"></div>
+                    <div class="layer" data-depth="0.20"><img src="img/4.png" class="img-4 par"></div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="img/04530_03.png" alt="">
-                    <p class="title">Fully Responsive</p>
-                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-                    </p>
+                <div class="col-md-6">
+                    <h1>Track your next <br> fuel shops</h1>
+                    <p class="italic">Monitor and Alert on all petrol bunks near to you</p>
+                    <p>Signup For <span class="bg"> FREE </span></p>
+                    <form action="#">
+                        <input type="text" placeholder="Your E-mail  Adress">
+                        <a href="#" class="btn">SIGNUP</a>
+                    </form>
                 </div>
-                <div class="col-md-4">
-                    <img src="img/04530_05.png" alt="">
-                    <p class="title">Easy to Customize</p>
-                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-                    </p>
-                </div>
-                <div class="col-md-4">
-                    <img src="img/04530_07.png" alt="">
-                    <p class="title">Direct Support</p>
-                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore.
-                    </p>
+                <div class="col-md-6">
+                    <img class="pic" src="img/pic.png" alt="">
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js" integrity="sha256-7LkWEzqTdpEfELxcZZlS6wAx5Ff13zZ83lYO2/ujj7g=" crossorigin="anonymous"></script>
-    <script src="js/jquery.vide.min.js"></script>
+    <div class="wrapper-partners">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul>
+                        <li>
+                            <a href="#"><img src="img/logo1.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/logo2.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/logo3.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/logo4.png" alt=""></a>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/logo5.png" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper2">
+        <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg1.png">
+            <h1>The Zephirest</h1>
+        </div>
+    </div>
+    <div class="wrapper3">
+        <div class="block1">
+            <!-- <div class="header2"> -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <img src="img/10.png" alt="">
+                        <img src="img/11.png" alt="">
+                        <img src="img/12.png" alt="">
+                        <p class="title">unity</p>
+                        <p class="title2">
+                            Great experiences build
+                            <br> great brands.
+                        </p>
+                        <ul>
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#"> what we do</a></li>
+                            <li><a href="#"> meet the team</a></li>
+                            <li><a href="#">our work</a></li>
+                            <li><a href="#">get in touch</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--  </div> -->
+        </div>
+        <div class="block2">
+            <p class="title3">Digital Creatives</p>
+            <p>We quickly bring ideas to life with tangible
+                <br> prototypes, and refine until the very last
+                <br> moment in close collaboration with our
+                <br> clients.</p>
+            <div class="block-left">
+                <img src="img/Layer 5.jpg" alt="">
+                <p class="desc">Ideas are easy to come by. Execution is really, really hard.</p>
+            </div>
+
+            <div class="block-right">
+            
+            
+                <p class="title3">our ideology</p>
+                <p>Learn > Experiment > Fail > Learn > Experiment > Win</p>
+                <div class="rellax">
+                  <img class="pic3" src="img/Ellipse 2.png" alt="">
+              </div>
+              <div class="rellax" data-rellax-speed="7">
+                  <img class="pic4" src="img/Ellipse 3.png" alt="">
+              </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg-fill.jpg"></div> -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- <script src="js/jquery.parallax.min.js"></script> -->
+    <script src="js/parallax.min.js"></script>
+    <script src="js/parallax2.min.js"></script>
+    <script src="js/rellax.min.js"></script>
+    <script>
+    var scene = document.getElementById('scene');
+    var parallax = new Parallax(scene);
+    var rellax = new Rellax('.rellax');
+    </script>
 </body>
 
 </html>
