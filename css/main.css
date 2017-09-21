@@ -1,0 +1,504 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  cursor: default;
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+*,
+.col-md-3,
+.col-md-9,
+p {
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  font-size: 10px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: #babaa8;
+}
+
+.wrapper,
+body {
+  margin: 0 auto;
+}
+
+.sidebar {
+  background-color: #0e0f10;
+  height: auto;
+  text-align: center;
+  padding: 4rem 7rem 0;
+}
+
+.sidebar .logo {
+  display: block;
+  width: 135px;
+  height: 46px;
+  margin-bottom: 5rem;
+}
+
+.sidebar .food-menu,
+.sidebar .logo {
+  text-align: left;
+}
+
+.sidebar .food-menu .food-item a {
+  color: #747474;
+  font: 400 2.1rem/4.2rem 'Neucha',sans-serif;
+}
+
+.sidebar .food-menu .food-item a:hover {
+  color: #fff;
+}
+
+header {
+  padding: 0 6rem;
+  margin-bottom: 5rem;
+}
+
+header .main-menu .menu-item {
+  list-style-type: none;
+  font: 1.8rem/2.5rem 'Neucha',sans-serif;
+  display: inline-block;
+  margin-right: 4rem;
+  padding-top: 2.5rem;
+}
+
+header .main-menu .menu-item:hover {
+  color: #babaa8;
+  border-bottom: 1px solid #babaa8;
+}
+
+header .panel .offer {
+  display: inline-block;
+  background-color: #fff;
+  box-shadow: 2px 4px 27px 0 rgba(0,0,0,.07);
+  padding: 0 1rem;
+  text-align: left;
+}
+
+header .panel .offer p {
+  font: 400 1.4rem/2.5rem 'Neucha',sans-serif;
+  color: #000;
+}
+
+header .panel .offer p img {
+  padding-right: 1rem;
+}
+
+header .panel .offer p span {
+  vertical-align: middle;
+  width: 1px;
+  height: 4rem;
+  margin-right: 2rem;
+  display: inline-block;
+  background-color: rgba(196,198,195,.3);
+  padding: 0;
+}
+
+footer {
+  background-color: #f9f9f6;
+  height: auto;
+  width: 100%;
+}
+
+footer .sidebar-block {
+  background-color: #18191b;
+  height: 28rem;
+  width: 100%;
+  padding-top: 11rem;
+}
+
+footer .sidebar-block .btn {
+  border: 2px solid #fff;
+  font: 400 2rem/5.8rem 'Neucha',sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  width: 19.1rem;
+  height: 5.8rem;
+  transition: all .5s;
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  text-decoration: none;
+}
+
+footer .sidebar-block .btn:hover {
+  color: #18191b;
+  background-color: #fff;
+  text-decoration: none;
+}
+
+footer .footer-block {
+  padding: 7rem;
+  margin: 0 auto;
+  text-align: center;
+  border-bottom: 2px solid #ededea;
+}
+
+footer .footer-block .block {
+  margin: 0 auto;
+}
+
+footer .footer-block .block .title {
+  font: 400 1.98rem/2rem 'Neucha',sans-serif;
+  text-align: left;
+  color: #0e0f10;
+  text-transform: uppercase;
+}
+
+footer .footer-block .block p {
+  font: 400 1.4rem/1.7rem 'Neucha',sans-serif;
+  color: #878787;
+  text-align: left;
+}
+
+footer .social-links {
+  text-align: left;
+}
+
+footer .social-links .social-link {
+  display: inline-block;
+  text-align: left;
+  padding-right: 1rem;
+}
+
+footer .social-links .social-link a {
+  display: block;
+}
+
+footer .copyright {
+  font: 400 1.1rem/1.2rem 'Neucha',sans-serif;
+  color: #0e0f10;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 2.5rem 6.5rem;
+}
+
+.underline {
+  display: inline-block;
+  height: 2rem;
+  text-decoration-style: solid;
+  border-bottom: .8rem solid #ffdd67;
+  margin-bottom: 1rem;
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+}
+
+.main-content {
+  padding: 0 5rem 1rem;
+  position: relative;
+  background-color: #fff;
+}
+
+.main-content .row {
+  margin-bottom: 8rem;
+}
+
+.main-content img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.main-content .info {
+  display: inline-block;
+  margin-left: 2rem;
+}
+
+.main-content .info p {
+  font: 400 1.7rem/2.4rem 'Neucha',sans-serif;
+  padding-bottom: 1rem;
+}
+
+.main-content .info p span {
+  font: 400 1.7rem/2.4rem 'Neucha',sans-serif;
+  color: #919292;
+  text-align: left;
+}
+
+.main-content .info p .circle,
+h4 img,
+h4 span {
+  float: right;
+  padding: .5rem 1rem;
+}
+
+.breadcrumbs {
+  font: 400 1.3rem/3.6rem 'Neucha',sans-serif;
+}
+
+.breadcrumbs,
+.main-content .info p,
+h2,
+h3,
+h4 {
+  color: #000;
+  text-align: left;
+}
+
+h2 {
+  padding-bottom: 4rem;
+  font: 400 3.6rem/3.6rem 'Neucha',sans-serif;
+}
+
+h2 .underline {
+  height: 3.4rem;
+  text-decoration-style: solid;
+  border-bottom: .8rem solid #ffdd67;
+}
+
+.box {
+  background-color: #f0f0f0;
+  width: 14rem;
+  height: 3.9rem;
+  padding: .5rem 1rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+h3,
+h4 {
+  font: 1.4rem/2.5rem 'Neucha',sans-serif;
+}
+
+h4 img {
+  padding: .8rem .5rem;
+  margin-left: -5rem;
+}
+
+h4 span {
+  cursor: pointer;
+  padding: .1rem .5rem;
+}
+
+h3 {
+  font: 400 2.2rem/3.4rem 'Neucha',sans-serif;
+}
+
+.list {
+  padding: 5px;
+  overflow: hidden;
+  margin: 0;
+  z-index: 2;
+  position: absolute;
+  top: 3.1rem;
+  left: 1rem;
+  margin-left: -1.5rem;
+  margin-top: .4rem;
+}
+
+.box-decor,
+.list li {
+  width: 14rem;
+  padding: .5rem 1.5rem;
+}
+
+.list li {
+  font: 400 1.3rem/2.4rem 'Neucha',sans-serif;
+  color: #000;
+  text-align: left;
+  border-bottom: 1px solid #e1e1e1;
+  z-index: 3;
+  background-color: #f0f0f0;
+}
+
+.list li span {
+  float: right;
+  font-family: sans-serif;
+}
+
+.box-decor {
+  z-index: 1;
+  background-color: #ffdd67;
+  height: 3.8rem;
+  margin-top: 1.1rem;
+  margin-left: -1rem;
+}
+
+#wrap,
+h2 .underline {
+  display: inline-block;
+}
+
+.decor {
+  text-align: center;
+}
+
+.row>.decor,
+h2 .underline {
+  margin-bottom: 1rem;
+}
+
+.col-md-6 {
+  padding: 0;
+}
+
+@media (max-width:990px) {
+  .main-content img {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .main-content .info {
+    display: inline-block;
+    margin-left: 2rem;
+  }
+
+  .main-content .info p,
+  .main-content .info p span {
+    font: 400 1.7rem/2.4rem 'Neucha',sans-serif;
+    text-align: left;
+  }
+
+  .main-content .info p {
+    padding-bottom: 1rem;
+    color: #000;
+  }
+
+  .main-content .info p span {
+    color: #919292;
+  }
+
+  .main-content .info p .circle {
+    float: right;
+    padding: .5rem 1rem;
+  }
+
+  .sidebar {
+    height: 55rem!important;
+  }
+
+  .sidebar .food-menu {
+    text-align: left;
+  }
+
+  .sidebar .food-menu .food-item a {
+    color: #747474;
+    font: 400 1.8rem/3.2rem 'Neucha',sans-serif;
+  }
+
+  .sidebar .food-menu .food-item a:hover {
+    color: #fff;
+  }
+
+  .main-content {
+    padding: 0 5rem;
+    position: relative;
+    background-color: #fff;
+    text-align: center;
+  }
+
+  .main-content .row {
+    margin-bottom: 3rem;
+  }
+
+  header {
+    padding: 0;
+    margin-bottom: 5rem;
+    text-align: center;
+  }
+
+  header .main-menu {
+    width: 100%;
+  }
+
+  header .main-menu .menu-item {
+    list-style-type: none;
+    font: 1.8rem/2.5rem 'Neucha',sans-serif;
+    display: inline-block;
+    margin-right: 2rem;
+    padding-top: 2.5rem;
+  }
+
+  header .main-menu .menu-item:hover {
+    color: #babaa8;
+    border-bottom: 1px solid #babaa8;
+  }
+}
+
+@media (max-width:768px) {
+  .decor {
+    text-align: center;
+    margin-top: 0;
+  }
+
+  footer .sidebar-block {
+    background-color: #18191b;
+    height: 15rem;
+    width: 100%;
+    padding-top: 5rem;
+  }
+
+  footer .sidebar-block .btn {
+    border: 2px solid #fff;
+    font: 400 2rem/5.8rem 'Neucha',sans-serif;
+    color: #fff;
+    text-transform: uppercase;
+    width: 19.1rem;
+    height: 5.8rem;
+    transition: all .5s;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    text-decoration: none;
+  }
+
+  footer .sidebar-block .btn:hover {
+    color: #18191b;
+    background-color: #fff;
+    text-decoration: none;
+  }
+
+  footer .footer-block {
+    padding: 3rem;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 2px solid #ededea;
+  }
+
+  footer .footer-block .block {
+    margin: 0 auto;
+  }
+
+  footer .footer-block .block .title,
+  footer .social-links {
+    text-align: center;
+  }
+
+  footer .footer-block .block p {
+    padding: .5rem 0;
+    text-align: center;
+  }
+
+  footer .copyright {
+    padding: .5rem;
+  }
+}
