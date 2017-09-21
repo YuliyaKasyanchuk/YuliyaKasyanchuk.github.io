@@ -1318,8 +1318,7 @@ a.service:last-child img {
 
 .decor {
   opacity: 1;
-  background-color: green;
-  border: 1px solid red;
+  
 }
 
 #slider .ui-slider-range {
