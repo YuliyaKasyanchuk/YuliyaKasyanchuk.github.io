@@ -1,0 +1,145 @@
+/*================= media-queries ===============*/
+@media screen and (max-width: 1200px){
+  .fix-header .logo {
+  	margin-left: 20px;
+  }
+  .nav-header li {
+  	width: 140px;
+  	height: 80px;
+  	a {
+  		font-size: 12px;
+  		line-height: 7;
+  	}
+  }
+  .title-header {
+  	height: 450px;
+  }
+  .title-header p:nth-child(1), .title-header p:nth-child(3) {
+  	font-size: 30px;
+  }
+  .title-header p:nth-child(2) {
+  	font-size: 60px;
+  }
+  .more-header {
+  	margin: 25px 0 0 -100px;
+  }
+
+}
+@media screen and (max-width: 880px){
+   .nav-header li {
+  	width: 100px;
+  	height: 60px;
+  	a {
+  		font-size: 10px;
+  		line-height: 6;
+  	}
+  }
+  	.card:first-child {
+		margin-left: 30px;
+	}
+	.title-header {
+  		height: 540px;
+  	}
+
+  	.footer {
+  		padding: 59px 10px 39px 10px;
+  	}
+
+  	.footer-item {
+  		padding: 0 15px;
+  	}	
+}
+@media screen and (max-width: 720px){
+	footer {
+  		height: 100%;
+	}
+}
+
+@media screen and (max-width: 680px){
+  .nav-header {
+  	display: none;
+  }
+  .burger-menu {
+  	display: block;
+  }
+  .title-header {
+  	margin-top: 250px;
+  }
+}
+
+@media screen and (max-width: 414px){
+	.swiper-pagination {
+		display: none;
+	}
+	.title-header {
+		margin-top: 170px;
+		width: 100%;
+		height: 460px;
+	}
+  .title-header p:nth-child(1), .title-header p:nth-child(3) {
+  	font-size: 20px;
+  }
+  .title-header p:nth-child(2) {
+  	font-size: 40px;
+  	line-height: 80px;
+  }
+	.services-area {
+		padding: 45px 0;
+	}
+  .services-area .card, .services-area .card:nth-child(2)
+  , .services-area .card:nth-child(3), .services-area .card:nth-child(4)  {
+  	margin-left: 0
+  }
+}
+
+@media screen and (max-width: 375px){
+	.title-header {
+		height: 390px;
+	}
+	.title-header p:nth-child(2) {
+		font-size: 30px;
+		line-height: 80px;
+	}
+	.more-header {
+		margin: 25px 0 0 -70px;
+	}
+	.more-header button {
+		width: 150px;
+		height: 50px;
+		margin: 0 auto;
+	}
+	.burger {
+		width: 60%;
+		height: 4px;
+		right: 20px;
+		top: 3px;
+	}
+	.burger::before {
+  		width: 30px;
+  		height: 4px;
+  		top: 10px;
+	}
+	.burger::after {
+		width: 30px;
+		height: 4px;
+		bottom: 10px;
+	}
+}
+
+@media screen and (max-width: 320px){
+	.title-header {
+		height: 305px;
+	}
+	.title-header p:nth-child(2) {
+		font-size: 20px;
+		line-height: 60px;
+	}
+	.more-header {
+		margin: 5px 0 0 -50px;
+	}
+	.more-header button {
+		width: 110px;
+		height: 50px;
+		font-size: 18px; 
+	}
+}
