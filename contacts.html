@@ -124,32 +124,32 @@
         </div>
     </div>
     <a href="#close" class="overlay"></a>
-    <form action="#"  id="form">
+    <form action="#" id="form">
 
 
         <a href="#close" class="popup-close">&times;</a>
         <div class="field">
             <i class="icon-user" aria-hidden="true"></i>
-            <input type="text" class="form-control" id="input-name" name="name" placeholder="Имя">
+            <input type="text" class="form-control" id="input-name" name="name" required placeholder="Имя">
         </div>
         <div class="field">
             <i class="icon-mail-alt" aria-hidden="true"></i>
-            <input class="form-control" id="input-email" name="email" type="email" placeholder="Email">
+            <input class="form-control" id="input-email" name="email" type="email" placeholder="Email" />
         </div>
         <div class="field">
             <i class="icon-phone" aria-hidden="true"></i>
-            <input type="tel" class="form-control" id="tel" name="tel" type="text" placeholder="Телефон">
+            <input type="tel" class="form-control" required  id="tel" name="tel" type="text" placeholder="Телефон" />
         </div>
         <div class="field">
             <i class="icon-comment" aria-hidden="true"></i>
-            <input type="text" class="form-control" id="input-message" name="message" type="text" placeholder="Сообщение"  >
+            <input type="text" class="form-control" id="input-message" name="message" type="text" placeholder="Сообщение"  />
         </div>
         <button type="submit" class="btn" href="#modal-thanks">Отправить ></button>
     </form>
-    <div class="modal-thanks fade" id="modal-thanks">
+    <!--<div class="modal-thanks fade" id="modal-thanks">
         <p>Спасибо за обратную связь!</p>
         <a href="#close" class="button">Закрыть</a>
-    </div>
+    </div>-->
 
 </div>
     <footer>
@@ -199,10 +199,52 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
      <script src="js/jquery.maskedinput.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
+   <!--  <script src="js/jquery.validate.min.js"></script> -->
+   <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.5.5/jquery.validate.js"></script>
    
      
     <script src="js/main.js"></script>
+    <script>
+        jQuery(function($){
+             $("#tel").mask("(8) 999-999-99-99");
+        });
+        $('#form').validate({
+
+            rules: {
+                name: {
+                    required: true,
+                    minlength: 2
+                },
+                tel: {
+                    required: true,
+                    minlength: 11
+                   
+                },
+                email:{
+                    minlength: 8,
+                    email:true
+                }
+            },
+
+            messages: {
+                name: {
+                    required: "Это поле обязательно к заполнению",
+                    minlength: "Не менее 2-х символов"
+                },
+                tel: {
+                    required: "Это поле обязательно к заполнению",
+                    minlength: "Не менее 11-х символов",
+                    tel: "Введите корректный телефон"
+                },
+                email:{
+                    minlength: "Не менее 8-х символов",
+                    email:"Введите корректный e-mail"
+                }
+            }
+
+
+        });
+    </script>
  <!--    <script>
 
     $(document).ready(function() {
