@@ -7,7 +7,7 @@ $(document).ready(function() {
             type: "POST",
             url: "mail.php",
             data: $(this).serialize()
-        }).done(function() {
+        }).success(function() {
             $(this).find("input").val("");
              $('.btn').click(function(){
     $('#form').fadeOut();
