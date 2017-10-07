@@ -1,0 +1,995 @@
+@font-face {
+  font-family: 'Oglavie';
+  src: url("../fonts/OglSoUcs8.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  text-align: center;
+  font-family: 'Times New Roman',serif;
+  cursor: default;
+  margin: 0 auto;
+}
+
+a:active,
+a:focus,
+a:hover,
+a:visited {
+  border: 0;
+  outline: 0;
+  color: #363636;
+  text-decoration: none;
+}
+
+h1,
+h2 {
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: #fff;
+  font-size: 4.8rem;
+  font-weight: 400;
+  font-family: 'Oglavie';
+  letter-spacing: .7rem;
+}
+
+h2 {
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  font: 800 3.6rem/3.6rem 'Cuprum',sans-serif;
+}
+
+h3 {
+  font: 800 2.5rem/3rem 'Times New Roman',serif;
+  text-align: left;
+}
+
+h4 {
+  font: 400 2.2rem/3rem 'Cuprum',sans-serif;
+}
+
+.h3 {
+  font: 800 2rem/3rem 'Cuprum',sans-serif;
+  text-align: center;
+}
+
+p {
+  font: 400 2rem/2.5rem "Times New Roman";
+  padding-bottom: 2rem;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.size {
+  max-height: 300px;
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.parallax-window {
+  width: 100%;
+  height: 100vh;
+  display: table;
+  position: relative;
+  color: #fff;
+}
+
+.wrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.text-block,
+header {
+  position: relative;
+  z-index: 2;
+}
+
+.desc {
+  color: #fff;
+  font-size: 2rem;
+  padding-top: 2rem;
+  font-family: 'Cuprum',sans-serif;
+}
+
+.content {
+  min-height: 100%;
+  height: auto!important;
+  padding-bottom: 10rem;
+}
+
+* html .content {
+  height: 100%;
+}
+
+.line {
+  height: 3px;
+  width: 20rem;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.down,
+.icon-down-open {
+  color: #fff;
+  transition: all .5s;
+}
+
+.icon-down-open:hover {
+  color: #333;
+}
+
+.down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  z-index: 2;
+}
+
+.down:hover {
+  background-color: #fff;
+  text-decoration: none;
+  color: #333;
+}
+
+.main-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  position: absolute;
+  z-index: 1;
+}
+
+.menu-wrapper {
+  background-color: #383838;
+}
+
+.menu,
+.menu-wrapper a img {
+  width: auto;
+  height: 6rem;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #383838;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.menu-item {
+  list-style-type: none;
+  display: inline-block;
+  padding: 0 2.5rem;
+}
+
+.menu-item a {
+  font: 800 2rem/5.6rem 'Cuprum',sans-serif;
+  color: #fff;
+  display: inline-block;
+}
+
+.menu-item a:active,
+.menu-item a:focus,
+.menu-item a:hover,
+.menu-item a:visited {
+  border-bottom: 3px solid #fff;
+}
+
+.menu-link {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 1px 1px 10px rgba(0,0,0,.4);
+  display: none;
+  position: fixed;
+  top: .6rem;
+  left: 2rem;
+  z-index: 5000;
+}
+
+.menu-link span,
+.menu-link span:after,
+.menu-link span:before {
+  height: 2px;
+  width: 18px;
+  background-color: #333;
+  display: block;
+  position: absolute;
+  left: 50%;
+  margin-left: -9px;
+  top: 50%;
+  margin-top: -1px;
+}
+
+.menu-link span:after,
+.menu-link span:before {
+  content: '';
+  margin-top: -6px;
+  transition: all .3s;
+}
+
+.menu-link span:after {
+  margin-top: 4px;
+}
+
+.menu-link_active span {
+  background-color: transparent;
+}
+
+.menu-link_active span:before {
+  transform: rotate(135deg);
+  margin-top: 0;
+}
+
+.menu-link_active span:after {
+  transform: rotate(-135deg);
+  margin-top: 0;
+}
+
+.focused {
+  border-bottom: 3px solid #fff;
+}
+
+.info-wrapper {
+  padding: 10rem 0;
+  padding-top: 5rem;
+  text-align: center;
+  background-color: #fff;
+}
+
+.info-block img {
+  width: 33%;
+  float: left;
+  padding: 2rem;
+}
+
+.info-block .right-img {
+  float: right;
+  padding: 2rem;
+}
+
+.info-block p,
+.source {
+  text-align: left;
+}
+
+.source {
+  margin-top: 10rem;
+  font: 400 1.3rem/1.3rem 'Times New Roman',serif;
+}
+
+.source a {
+  text-decoration: underline;
+}
+
+.info {
+  padding: 2rem 0 5rem;
+  background-color: #fafafa;
+  margin: 0 auto;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+.info p {
+  border-bottom: 1px solid #aeaeae;
+  padding: 2rem 0;
+}
+
+.info strong {
+  margin-right: 5rem;
+}
+
+.about-church {
+  padding-bottom: 5rem;
+}
+
+.about-church .icon-left {
+  float: left;
+  margin: 2rem;
+  margin-top: 0;
+  height: auto;
+  max-width: 20rem;
+  width: 100%;
+}
+
+.about-church img {
+  height: 20rem;
+  width: auto;
+  object-fit: cover;
+}
+
+.about-church p,
+.info p,
+.info strong {
+  text-align: left;
+}
+
+.contacts {
+  padding: 10rem 0;
+}
+
+.contacts a {
+  color: #363636;
+}
+
+.contacts .contacts-wrapper {
+  padding: 3rem;
+  margin-bottom: 3rem;
+  background-color: #f1f1f1;
+  text-align: left;
+}
+
+.contacts .contacts-wrapper .callback {
+  border: 2px solid #3cccc5;
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  transition: all .5s;
+  font: 800 2rem/2rem 'Cuprum',sans-serif;
+  text-align: center;
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 4rem;
+  display: block;
+}
+
+.contacts .contacts-wrapper .callback:hover {
+  background-color: #3cccc5;
+  color: #fff;
+}
+
+.contacts .bold {
+  font-weight: 700;
+}
+
+.contacts .middle {
+  font: 400 1.8rem/1.8rem 'Times New Roman',serif;
+}
+
+#form,
+.contacts .contact {
+  text-align: left;
+}
+
+iframe {
+  width: 100%;
+  height: 45rem;
+}
+
+.priest {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+#form {
+  width: 30%;
+  margin: 0 auto;
+  padding: 3rem;
+  border: 1px solid #383838;
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#form i {
+  color: rgba(51,51,51,.5);
+  display: inline-block;
+  padding: 0 .5rem;
+}
+
+#form .popup-close {
+  font-size: 26px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  transition: all .2s;
+  color: #383838;
+}
+
+#form .popup-close:hover {
+  text-decoration: none;
+  color: #333;
+  transform: rotate(180deg);
+}
+
+#form .popup-close,
+#form .popup-close:active {
+  text-decoration: none;
+}
+
+#form .field {
+  display: block;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #383838;
+}
+
+#form .field .fa {
+  color: #383838;
+  width: 12px;
+  height: 16px;
+  display: inline-block;
+}
+
+#form .field input {
+  display: inline-block;
+  border: 0;
+  font: 400 16px/16px 'Times New Roman',serif;
+  font-family: Ubuntu;
+  outline: 0;
+  width: 90%;
+}
+
+#form .btn:focus,
+#form .field input:focus {
+  outline: 0;
+}
+
+#form .btn {
+  color: #fff;
+  font: 700 16px/45px 'Cuprum',sans-serif;
+  text-align: center;
+  background-color: #3cccc5;
+  display: block;
+  margin: 50px auto 0;
+  padding: 0 30px;
+  border-radius: 50px;
+  box-shadow: none;
+  border: 0;
+}
+
+.botton .btn-more {
+  width: 25%;
+  margin-top: 3rem;
+}
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.3);
+  display: none;
+}
+
+.box {
+  width: 20rem;
+  height: 20rem;
+  display: inline-block;
+}
+
+.gallery,
+.news p {
+  text-align: left;
+}
+
+.gallery a,
+.news .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery .frame,
+.gallery a,
+.gallery img {
+  display: inline-block;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery .frame {
+  width: 24%;
+  margin: 0 .6rem 1rem 0;
+}
+
+.news {
+  padding: 5rem 0;
+}
+
+.news .image-sm {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  height: 20rem;
+}
+
+.news .image {
+  overflow: hidden;
+  width: 100%;
+  min-width: 29rem;
+  max-width: 32rem;
+  border: 0;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.news .image img {
+  -moz-transition: all .5s ease-out;
+  -o-transition: all .5s ease-out;
+  -webkit-transition: all .5s ease-out;
+}
+
+.image img:hover,
+.news .image img:hover {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.news p {
+  margin: 2rem;
+}
+
+.pagin {
+  margin-left: 40%;
+}
+
+.history-news {
+  padding-bottom: 0;
+}
+
+.title,
+.title-sm {
+  color: #363636;
+  font: 800 2.5rem/3rem 'Cuprum',sans-serif;
+  transition: all .2s;
+  min-height: 14rem;
+  display: block;
+}
+
+.title-sm:hover,
+.title:hover {
+  color: #3cccc5;
+}
+
+.title-sm {
+  min-height: 5rem;
+}
+
+.news-top {
+  padding-top: 0;
+}
+
+.more {
+  font: 400 1.8rem/2rem 'Times New Roman',serif;
+}
+
+.more:hover {
+  border-bottom: 1px dashed #000;
+}
+
+.school {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.btn-more,
+.school-block img {
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+}
+
+.school-block .right-img {
+  float: right;
+  padding: 2rem;
+}
+
+.school-block p {
+  text-align: center;
+  min-height: 15rem;
+}
+
+.school-block h2 {
+  min-height: 7rem;
+}
+
+.btn-more {
+  font: 400 2rem/2rem 'Cuprum',sans-serif;
+  text-transform: uppercase;
+  color: #363636;
+  border: 2px solid #3cccc5!important;
+  padding: 1rem 3rem;
+  transition: all .5s;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+}
+
+.btn-more:active,
+.btn-more:focused,
+.btn-more:visited {
+  color: #363636;
+  border: 2px solid #3cccc5;
+}
+
+.btn-more:hover {
+  background-color: #3cccc5;
+  color: #fff;
+  border: 2px solid #3cccc5;
+}
+
+.modal img {
+  width: 100%;
+}
+
+.modal-title {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+.close {
+  background-color: transparent;
+  border: 0;
+  font-size: 2.5rem;
+  position: absolute;
+  right: 2rem;
+  top: 1rem;
+}
+
+.modal-btn {
+  display: inline-block;
+  color: #333;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.modal-btn:hover {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+.image {
+  overflow: hidden;
+  width: 380px;
+  height: 250px;
+  border: 1px solid red;
+}
+
+.image img {
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+footer,
+footer p {
+  font-family: 'Cuprum',sans-serif;
+}
+
+footer {
+  background-color: #383838;
+  padding: 2rem 1rem;
+  margin: -10rem auto 0;
+  min-height: 10rem;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+
+footer .middle {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+footer p {
+  text-align: left;
+}
+
+footer,
+footer a {
+  color: #fff;
+}
+
+footer a:active,
+footer a:focus,
+footer a:hover,
+footer a:visited {
+  color: #fff;
+  text-decoration: none;
+  border: 0;
+  outline: 0;
+}
+
+footer strong {
+  font-weight: 300;
+  font-size: 2.4rem;
+}
+
+.offer-btn {
+  display: block;
+  width: 80%;
+  max-width: 200px;
+  margin: 1rem auto;
+  border: 1px solid #fff;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: #fff;
+  border-radius: 100px;
+  transition: .2s;
+}
+
+.offer-btn:hover {
+  text-decoration: none;
+  background-color: #fff;
+  color: #646464;
+}
+
+.dec {
+  font: 400 3.6rem/6rem 'Cuprum',sans-serif;
+}
+
+.total-info .bold {
+  font: 700 2.2rem/5rem 'Cuprum',sans-serif;
+}
+
+.total-info ul {
+  margin: 0 auto;
+  text-align: left;
+  width: 30%;
+}
+
+.total-info ul li {
+  list-style-type: none;
+  font: 400 1.8rem/3rem 'Times New Roman',serif;
+  text-align: left;
+}
+
+.error {
+  border: 1px solid red;
+}
+
+label.error {
+  color: red;
+  border: 0;
+}
+
+@media (max-width:1200px) {
+  .menu-link {
+    display: block;
+  }
+
+  .menu-block {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    background-color: #363636;
+    opacity: .8;
+    color: #fff;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    z-index: 100;
+    transition: all .5s;
+  }
+
+  .menu-block_active {
+    left: 0;
+  }
+
+  .menu-block .menu {
+    height: auto;
+  }
+
+  .menu-block .menu-link {
+    display: block;
+  }
+
+  .menu-block .menu li {
+    display: block;
+    text-align: center;
+    padding: 0;
+  }
+
+  .menu-block .menu li a {
+    display: block;
+    width: 100vw;
+    transition: all .3s;
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  .menu-block .menu li a:active,
+  .menu-block .menu li a:hover {
+    background-color: rgba(255,255,255,.4);
+    text-decoration: none;
+  }
+}
+
+@media (max-width:1024px) {
+  footer .col-md-2,
+  footer .col-md-6 {
+    padding-bottom: 3rem;
+  }
+
+  #form,
+  .contacts .contacts-wrapper .callback {
+    width: 60%;
+  }
+
+  .info .agenda {
+    margin-bottom: 5rem;
+    padding-left: 5rem;
+  }
+}
+
+@media (max-width:768px) {
+  .container {
+    width: auto;
+  }
+
+  #form,
+  .info-block img {
+    width: 60%;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+
+  .contacts {
+    padding: 3rem 0;
+  }
+
+  .contacts .contacts-wrapper {
+    padding: 1rem 1.5rem;
+  }
+
+  .contacts .contacts-wrapper .callback {
+    width: 60%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .total-info ul {
+    text-align: center;
+    width: 100%;
+  }
+
+  #form i {
+    display: none;
+  }
+
+  .gallery .frame {
+    width: 48%;
+  }
+}
+
+@media (max-width:414px) {
+  .about-church .icon-left {
+    float: none;
+  }
+
+  .botton .btn-more {
+    width: auto;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+  }
+
+  h2 {
+    font: 800 2.8rem/3rem 'Cuprum',sans-serif;
+  }
+
+  .dec {
+    font: 400 2.5rem/2.8rem 'Cuprum',sans-serif;
+  }
+
+  .info .calendar,
+  h1 {
+    padding-left: 2rem;
+  }
+
+  .info p {
+    text-align: center;
+    display: block;
+  }
+
+  .info strong {
+    margin-right: .5rem;
+    text-align: center;
+  }
+
+  .info strong:nth-child(3) {
+    display: block;
+  }
+
+  .info .agenda {
+    padding-left: 1rem;
+  }
+
+  .info-block img {
+    width: 100%;
+  }
+
+  .contacts,
+  .info-wrapper,
+  .news {
+    padding: 3rem 0;
+  }
+
+  .contacts .contacts-wrapper {
+    padding: 1rem;
+  }
+
+  .contacts .contacts-wrapper .callback {
+    width: 80%;
+  }
+
+  #form {
+    width: 90%;
+  }
+
+  .gallery .frame {
+    width: 98%;
+  }
+}
+
+@media (max-width:375px) {
+  .source {
+    margin-top: 2rem;
+  }
+
+  .news {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width:320px) {
+  .info {
+    padding: 3rem 0;
+  }
+}

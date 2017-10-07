@@ -1,0 +1,283 @@
+/*MEDIA*/
+
+@media screen and (max-width: 1200px) {
+    .menu {
+        &-link {
+            display: block;
+        }
+    }
+
+    .menu-block {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100vw;
+        background-color: $main-color;
+        opacity: 0.8;
+        color: #fff;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        z-index: 100;
+        transition: all 0.5s;
+        &_active {
+            left: 0;
+        }
+        .menu {
+            height: auto;
+            &-link {
+                display: block;
+            }
+            li {
+                display: block;
+                text-align: center;
+                padding: 0;
+
+                a {
+                    display: block;
+                    width: 100vw;
+                    transition: all 0.3s;
+                    text-decoration: none;
+                    border-bottom: none;
+
+                    &:hover,
+                    &:active {
+                        background-color: rgba(255, 255, 255, 0.4);
+                        text-decoration: none;
+                    }
+                    ;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    footer {
+        .col-md-2 {
+            padding-bottom: 3rem;
+        }
+        .col-md-6 {
+            padding-bottom: 3rem;
+        }
+    }
+
+    .gallery {
+        /* a {
+             width: 31%;
+             margin: 0 0.5rem 1rem 0;
+         }*/
+    }
+
+    #form {
+        width: 60%;
+    }
+
+    .contacts {
+
+        .contacts-wrapper {
+            .callback {
+                width: 60%;
+            }
+        }
+    }
+    .info {
+
+        .agenda {
+            margin-bottom: 5rem;
+            padding-left: 5rem;
+        }
+    }
+    /*.info{
+
+    .agenda{
+        width: 68%;
+        margin: 0 auto;
+        margin-bottom: 5rem;
+        margin-left: 15rem;
+    }
+    .calendar{
+        width: 80%;
+
+    }
+  }*/
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: auto;
+    }
+    .info-block {
+        img {
+            width: 60%;
+        }
+    }
+    h2 {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+    }
+    .contacts {
+
+        padding: 3rem 0rem;
+
+        .contacts-wrapper {
+            padding: 1rem 1.5rem;
+
+            .callback {
+                width: 60%;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+    .total-info {
+
+
+        ul {
+
+            text-align: center;
+            width: 100%;
+            li {}
+        }
+    }
+
+    #form {
+        width: 60%;
+
+        i {
+            display: none;
+        }
+    }
+    .gallery {
+        a {}
+        .frame {
+            width: 48%;
+        }
+    }
+    /*.info{
+    .agenda{
+        margin-bottom: 5rem;
+        margin-left: 5rem;
+        width: 90%;
+    }
+
+  }*/
+}
+
+@media screen and (max-width: 414px) {
+    .about-church .icon-left {
+        float: none;
+    }
+    .botton .btn-more {
+        width: auto;
+    }
+    h1 {
+
+        font-size: 2.8rem;
+        padding-left: 2rem;
+    }
+    h2 {
+        font: 800 2.8rem/3rem $decor-font;
+    }
+    .dec {
+        font: 400 2.5rem/2.8rem $decor-font;
+    }
+    .info {
+
+        .calendar {
+            padding-left: 2rem;
+        }
+        p {
+            text-align: center;
+        }
+        strong {
+            margin-right: 0.5rem;
+            text-align: center;
+            &:nth-child(3) {
+                display: block;
+            }
+            ;
+        }
+        p {
+            display: block;
+        }
+        .agenda {
+            padding-left: 1rem;
+        }
+    }
+    .info-block {
+        img {
+            width: 100%;
+        }
+    }
+    .contacts {
+        padding: 3rem 0px;
+
+        .contacts-wrapper {
+            padding: 1rem;
+            .callback {
+                width: 80%;
+            }
+        }
+    }
+
+    .info-wrapper {
+        padding: 3rem 0px;
+    }
+
+    #form {
+        width: 90%;
+    }
+    .gallery {
+        a {}
+        .frame {
+            width: 98%;
+        }
+    }
+    .news {
+        padding: 3rem 0;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .source {
+        margin-top: 2rem;
+    }
+    .news {
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+
+    .info {
+        padding: 3rem 0;
+
+        /*.calendar {
+             padding-left: 2rem;
+         }
+         p {
+             text-align: center;
+         }
+         strong {
+             margin-right: 0.5rem;
+             text-align: center;
+             &:nth-child(3) {
+                 display: block;
+             }
+             ;
+         }
+         p {
+             display: block;
+         }
+         .agenda {
+             padding-left: 1rem;
+         }*/
+    }
+}
