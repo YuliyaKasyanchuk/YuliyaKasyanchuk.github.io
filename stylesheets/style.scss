@@ -1,0 +1,104 @@
+
+@import "normalize";
+
+/*=================
+Variables
+=================*/
+$decor-color: #ffdc00;
+$main-color: #3c3c3c;
+$light-color:#fefefe;
+$main-font: 'Arial', sans-serif;
+$decor-font: 'PT Sans', sans-serif;
+/*=================
+END VARIABLES
+=================*/
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+    
+}
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+     font-size: 10px;
+       cursor: default;
+         width: 100%;
+    height: 100%;
+    cursor: default;
+    transition: all 0.3s;
+}
+
+body {
+    font-size: 10px;
+    color:#000;
+    transition: all 0.3s;
+
+}
+p{
+    margin:0;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+.wrap{
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+}
+
+.middle {
+    width: 100%;
+    
+}
+
+.middle:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
+.main-wrapper {
+    width: 100%;
+    max-width: 960px;
+    margin: 9rem auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+.h2{
+    font:700 3rem/3rem $decor-font;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+.h3{
+    font:700 3rem/3rem $decor-font;
+    color:#000;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+}
+.img-sale{
+    width: 100%;
+}
+
+@import "main";
+@import "footer";
+@import "media-queries";
+
