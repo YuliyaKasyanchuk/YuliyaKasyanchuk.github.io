@@ -243,10 +243,10 @@ h3 {
 .menu ul li a {
   color: #5a5a5a;
   text-transform: uppercase;
-  height: 100%;
   display: block;
   font: 300 1.4rem/2.6rem 'Futura Light BT',sans-serif;
   border-top: 4px solid transparent;
+  height: 100%;
   padding-top: 2rem;
 }
 
@@ -317,7 +317,7 @@ h3 {
 
 .menu-list {
   background-color: rgba(29,39,90,.6);
-  height: 100vh;
+  height: auto;
   z-index: 5;
   display: -webkit-flex;
   display: -moz-flex;
@@ -329,7 +329,8 @@ h3 {
   align-items: center;
   left: -100vw;
   top: 0;
-  position: fixed;
+  position: absolute;
+  padding-bottom: 15rem;
   padding-top: 15rem;
 }
 
