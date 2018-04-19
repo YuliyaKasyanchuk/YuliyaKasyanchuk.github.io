@@ -404,17 +404,14 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
         next[i].addEventListener('click', function() {
-                   if (i === 0) {
+               if (i === 0) {
 
                 plusSkinSlides(1);
 
                 console.log('skinInd' + skinIndex);
                 console.log('check ' + check)
-                console.log(flag);
-                
                 if (check === 'false') {
-                	pesronSkin.style.background = 'url("./img/clothes/construct/clothes-' + 1+ '.png") center no-repeat';
-                    pesronSkin.style.backgroundSize = 'cover';
+
                     switch (skinIndex) {
                         case 1:
                             break;
