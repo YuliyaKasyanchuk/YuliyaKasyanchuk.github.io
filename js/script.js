@@ -194,6 +194,7 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
 
+       console.log(construct)
 
         prev[i].addEventListener('click', function() {
             if (i === 0) {
@@ -389,6 +390,14 @@ window.addEventListener('DOMContentLoaded', function() {
 			}
         });
 
+// ПО УМОЛЧАНИЮ - М//////////////////////////////////////////////////////////////////////////////////
+	pesronSkin.style.background = 'url("./img/skin/skin-' + 1 + '.png") center no-repeat';
+	pesronSkin.style.backgroundSize = 'cover';
+	personHair.style.background = 'url("./img/hair/construct/hair-' + 1 + '.png") center no-repeat';
+	personHair.style.backgroundSize = 'cover';
+	personClothes.style.background = 'url("./img/clothes/construct/clothes-' + 1 + '.png") center no-repeat';
+	personClothes.style.backgroundSize = 'cover';
+	////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
@@ -399,8 +408,11 @@ window.addEventListener('DOMContentLoaded', function() {
 
                 console.log('skinInd' + skinIndex);
                 console.log('check ' + check)
+                console.log(flag);
+                
                 if (check === 'false') {
-
+                	pesronSkin.style.background = 'url("./img/clothes/construct/clothes-' + 1+ '.png") center no-repeat';
+                    pesronSkin.style.backgroundSize = 'cover';
                     switch (skinIndex) {
                         case 1:
                             break;
@@ -527,6 +539,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 plusClothesSlides(1);
 
                 if (check === 'false') {
+                	
 	            	switch (clothesIndex) {
 	                        case 1:
 	                            break;
@@ -548,7 +561,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	                            break;
 
 	                        default:
-	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + 4 + '.png") center no-repeat';
 	                            personClothes.style.backgroundSize = 'cover';
 
 	                            break;
@@ -556,6 +569,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
                 } else {
+                	
                     switch (clothesIndex) {
                         case 1:
                             personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
@@ -576,11 +590,12 @@ window.addEventListener('DOMContentLoaded', function() {
                         case 6:
                             break;
                         default:
-                            pesronSkin.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            pesronSkin.style.background = 'url("./img/clothes/construct/clothes-' + 1+ '.png") center no-repeat';
                             pesronSkin.style.backgroundSize = 'cover';
 
                             break;
                     }
+
 
 				}
 				console.log(construct)
@@ -591,6 +606,8 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     /////////////////////////////////////////////ЗАПИСЬ В ГЛАВНУЮ КАРТУ
+    let progressBar = document.getElementsByClassName('progress-bar')[0],
+    	resultCount = document.getElementsByClassName('result-count')[0];
 
     readyBtn.addEventListener('click', function() {
         custom.style.display = 'none';
@@ -600,18 +617,32 @@ window.addEventListener('DOMContentLoaded', function() {
         candidateAge.innerHTML = age.value;
 
 
+
         if (male.checked === true) {
             candidateSex.innerHTML = male.value;
-            photo.style.background = 'none';
+            // photo.style.background = 'none';
+            // if(personSkin.value === '' && personHair.value = '' && personClothes.value = ''){
+            // 	photo.classList.add('photo-1');
+            // }
             photo.appendChild(construct);
+            photo.style.background = 'none';
         } else {
             candidateSex.innerHTML = female.value;
-            photo.style.background = 'none';
+            // photo.style.background = 'none';
             photo.appendChild(construct);
+            photo.style.background = 'none';
         }
 
         candidateBio.innerHTML = bio.value;
+        progressBar.style.height = '0%';
+        resultCount.innerHTML = '0%';
     });
+
+
+    // ОБНУЛЕНИЕ РЕЗУЛЬТАТОВ
+
+
+
 
 
 
