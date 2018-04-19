@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-    // MODAl
+    // MODAl////////////////////////////////////////////////////////////////
     let popupBtn = document.getElementById('popup-btn'),
         overlay = document.querySelector('.overlay'),
         popup = document.querySelector('.popup'),
@@ -32,9 +32,9 @@ window.addEventListener('DOMContentLoaded', function() {
             customStyle.style.display = 'block';
         }, 2000);
     });
+//////////////////////////////////////////////////////////////////////////////////////////
 
-
-    // PRINT INFO
+    // PRINT INFO/////////////////////////////////////////////////////////////////////////
     let name = document.getElementById('name'),
         age = document.getElementById('age'),
         male = document.getElementById('male'),
@@ -47,7 +47,7 @@ window.addEventListener('DOMContentLoaded', function() {
         candidateViews = document.querySelector('.views'),
         candidateBio = document.querySelector('.bio'),
         readyBtn = document.getElementById('ready'),
-        photo = document.getElementsByClassName('photo'),
+        photo = document.getElementsByClassName('photo')[0],
         person = document.querySelector('.person'),
         pesronSkin = document.getElementById('person-skin'),
         personHair = document.getElementById('person-hair'),
@@ -57,49 +57,53 @@ window.addEventListener('DOMContentLoaded', function() {
         radioBlock = document.querySelector('.radio'),
         skinNumber = 0;
     var flag = false;
+    var check = sexCheck();
 
     radioBlock.addEventListener('change', function() {
-    	sexCheck();
+
         if (event.target.value === 'Женский') {
             pesronSkin.style.background = 'url("./img/skin/skin-4.png") center no-repeat';
-pesronSkin.style.backgroundSize = 'cover';
-personHair.style.background = 'url("./img/hair/construct/hair-6.png") center no-repeat';
-personHair.style.backgroundSize = 'cover';
-personClothes.style.background = 'url("./img/clothes/construct/clothes-5.png") center no-repeat';
-personClothes.style.backgroundSize = 'cover';
-console.log(flag);
+            pesronSkin.style.backgroundSize = 'cover';
+            personHair.style.background = 'url("./img/hair/construct/hair-6.png") center no-repeat';
+            personHair.style.backgroundSize = 'cover';
+            personClothes.style.background = 'url("./img/clothes/construct/clothes-5.png") center no-repeat';
+            personClothes.style.backgroundSize = 'cover';
+
+            check = 'false';
+            
 
 
         } else {
-            
+
             pesronSkin.style.background = 'url("./img/skin/skin-1.png") center no-repeat';
             pesronSkin.style.backgroundSize = 'cover';
             personHair.style.background = 'url("./img/hair/construct/hair-1.png") center no-repeat';
             personHair.style.backgroundSize = 'cover';
             personClothes.style.background = 'url("./img/clothes/construct/clothes-1.png") center no-repeat';
             personClothes.style.backgroundSize = 'cover';
-            console.log(flag);
+            check = 'true';
         }
-
-console.log(flag);
-return flag;
     });
+    console.log('flag-check ' + check)
     select.addEventListener('click', function() {
         candidateViews.innerHTML = select.options[select.selectedIndex].value;
 
 
     });
-    function sexCheck(){
-    	if(document.getElementById('female').checked) {
-  flag = true;
-}else if(document.getElementById('male').checked) {
-  flag = false;
-}
-return flag;
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function sexCheck() {
+        if (document.getElementById('female').checked) {
+            flag = true;
+        } else if (document.getElementById('male').checked) {
+            flag = false;
+        }
+        return flag;
     }
+    console.log('flag ' + flag)
 
-
-    // SLIDER
+    // SLIDER//////////////////////////////////////////////////////////////////////////////////////////////
 
     let slideIndex = 1,
         skinIndex = 1,
@@ -108,10 +112,9 @@ return flag;
         skinSlides = document.getElementsByClassName('skin-color'),
         hairSlides = document.getElementsByClassName('hair-style'),
         clothesSlides = document.getElementsByClassName('clothes-style'),
-
         prev = document.querySelectorAll('.prev'),
         next = document.querySelectorAll('.next')
-        female = document.getElementById('female'),
+    	female = document.getElementById('female'),
         male = document.getElementById('male'),
         sex = document.getElementsByName('sex');
 
@@ -194,146 +197,421 @@ return flag;
 
         prev[i].addEventListener('click', function() {
             if (i === 0) {
-            	 var check = sexCheck();
-            	plusSkinSlides(-1);
-            	console.log('skinInd'+skinIndex);
-            		 console.log('check '+check)
-	                if(skinIndex === 1 || skinIndex === 2 || skinIndex ===3 ){
-	                	// if(check ==='false'){
-		                
-		             
-		                pesronSkin.style.background = 'url("./img/skin/skin-'+skinIndex+'.png") center no-repeat';
-		                pesronSkin.style.backgroundSize = 'cover';
-		                
-		            }
-		            
-	                // }
-	                else if(skinIndex === 4  || skinIndex === 5 || skinIndex === 6){
-	                	// if(check ==='true'){
 
-	                	pesronSkin.style.background = 'url("./img/skin/skin-' +skinIndex+ '.png") center no-repeat';
-		                pesronSkin.style.backgroundSize = 'cover';
-		                console.log(0)
-		            // }
-	                }
-            } else if (i === 1) {
-                
-                // for(let t = 0; t < 6; t++){
-                	// if(hairIndex === 1  || hairIndex === 2 || hairIndex === 3){
-                		// if(flag === 'false'){
-                			plusHairSlides(-1);
-	                	personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
-	                	personHair.style.backgroundSize = 'cover';
-	                // }
-	                
-                	// }
-                	// else{
-                	// 	personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
-	                // 	personHair.style.backgroundSize = 'cover';
-                	// }
-                // }
-            } else if (i === 2) {
+                plusSkinSlides(-1);
 
-                
-                plusClothesSlides(-1);
-                for(let t = 0; t < 6; t++){
-                	if(clothesIndex === 1 || clothesIndex === 2 || clothesIndex === 3){
-                personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
-                personClothes.style.backgroundSize = 'cover';
-} else{
-	personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
-                personClothes.style.backgroundSize = 'cover';
-}
-                }
+                console.log('skinInd' + skinIndex);
+                console.log('check ' + check)
+                if (check === 'false') {
 
-            }
+                    switch (skinIndex) {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 5:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 6:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
 
+                        default:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + 4 + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
 
-        });
-        next[i].addEventListener('click', function() {
-                if (flag === 1) {
-
-
-
-                    if (i === 0) {
-                        plusSkinSlides(1);
-                        pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
-                        pesronSkin.style.backgroundSize = 'cover';
-                    } else if (i === 1) {
-                        console.log('!!!' + hairIndex)
-                        // if (hairIndex === 0 || hairIndex === 1 || hairIndex === 2) {
-                        console.log(hairIndex)
-                        plusHairSlides(1);
-                        personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
-                        personHair.style.backgroundSize = 'cover';
-                        // }
-
-                    } else if (i === 2) {
-
-                        // if (clothesIndex === 0 || clothesIndex === 1 || clothesIndex === 2) {
-                        plusClothesSlides(1);
-                        personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
-                        personClothes.style.backgroundSize = 'cover';
-
+                            break;
                     }
 
+
+                } else {
+                    switch (skinIndex) {
+                        case 1:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 2:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 3:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        default:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + 1 + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+
+                            break;
+                    }
+
+
                 }
+            } else if (i === 1) {
+    			plusHairSlides(-1);
+    			if (check === 'false') {
+	            	switch (hairIndex) {
+	                        case 1:
+	                            break;
+	                        case 2:
+	                            break;
+	                        case 3:
+	                            break;
+	                        case 4:
+	                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                            personHair.style.backgroundSize = 'cover';
+	                            break;
+	                        case 5:
+	                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                            personHair.style.backgroundSize = 'cover';
+	                            break;
+	                        case 6:
+	                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                            personHair.style.backgroundSize = 'cover';
+	                            break;
 
-                // // } else {
-                //     if (i === 0) {
-                //         plusSkinSlides(1);
-                //         pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
-                //         pesronSkin.style.backgroundSize = 'cover';
-                //     } else if (i === 1) {
-                //         console.log('!!!' + hairIndex)
-                //         if (hairIndex === 3 || hairIndex === 4 || hairIndex === 5) {
-                //             plusHairSlides(1);
-                //             personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
-                //             personHair.style.backgroundSize = 'cover';
-                //         }
+	                        default:
+	                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                            personHair.style.backgroundSize = 'cover';
 
-                //     } else if (i === 2) {
+	                            break;
+	                    }
 
-                //         if (clothesIndex === 3 || clothesIndex === 4 || clothesIndex === 5) {
-                //             plusClothesSlides(1);
-                //             personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
-                //             personClothes.style.backgroundSize = 'cover';
 
-                //         }
+                } else {
+                    switch (hairIndex) {
+                        case 1:
+                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                            personHair.style.backgroundSize = 'cover';
+                            break;
+                        case 2:
+                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                            personHair.style.backgroundSize = 'cover';
+                            break;
+                        case 3:
+                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                            personHair.style.backgroundSize = 'cover';
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        default:
+                            pesronSkin.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
 
-                //     }
-                // }
-            
-        });
+                            break;
+                    }
+
 
 }
 
 
+            } 
+            else if (i === 2) {
 
 
-// if(skinNumber)
+                plusClothesSlides(-1);
+
+                if (check === 'false') {
+	            	switch (clothesIndex) {
+	                        case 1:
+	                            break;
+	                        case 2:
+	                            break;
+	                        case 3:
+	                            break;
+	                        case 4:
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.backgroundSize = 'cover';
+	                            break;
+	                        case 5:
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.backgroundSize = 'cover';
+	                            break;
+	                        case 6:
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.backgroundSize = 'cover';
+	                            break;
+
+	                        default:
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.backgroundSize = 'cover';
+
+	                            break;
+	                    }
 
 
-/////////////////////////////////////////////
+                } else {
+                    switch (clothesIndex) {
+                        case 1:
+                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            personClothes.style.backgroundSize = 'cover';
+                            break;
+                        case 2:
+                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            personClothes.style.backgroundSize = 'cover';
+                            break;
+                        case 3:
+                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            personClothes.style.backgroundSize = 'cover';
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        default:
+                            pesronSkin.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
 
-readyBtn.addEventListener('click', function() {
-    custom.style.display = 'none';
-    main.classList.add('fadeIn');
-    main.style.display = 'block';
-    candidateName.innerHTML = name.value;
-    candidateAge.innerHTML = age.value;
+                            break;
+                    }
+
+				}
+			}
+        });
 
 
-    if (male.checked === true) {
-        candidateSex.innerHTML = male.value;
-        photo[0].classList.add('photo-1');
-    } else {
-        candidateSex.innerHTML = female.value;
-        photo[0].classList.add('photo-2');
+
+
+        next[i].addEventListener('click', function() {
+                   if (i === 0) {
+
+                plusSkinSlides(1);
+
+                console.log('skinInd' + skinIndex);
+                console.log('check ' + check)
+                if (check === 'false') {
+
+                    switch (skinIndex) {
+                        case 1:
+                            break;
+                        case 2:
+                            break;
+                        case 3:
+                            break;
+                        case 4:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 5:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 6:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+
+                        default:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + 4 + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+
+                            break;
+                    }
+
+
+                } else {
+                    switch (skinIndex) {
+                        case 1:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 2:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 3:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        default:
+                            pesronSkin.style.background = 'url("./img/skin/skin-' + 1 + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+
+                            break;
+                    }
+
+
+                }
+            } else if (i === 1) {
+    			plusHairSlides(1);
+    			if (check === 'false') {
+	            	switch (hairIndex) {
+	                        case 1:
+	                            break;
+	                        case 2:
+	                            break;
+	                        case 3:
+	                            break;
+	                        case 4:
+	                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                            personHair.style.backgroundSize = 'cover';
+	                            break;
+	                        case 5:
+	                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                            personHair.style.backgroundSize = 'cover';
+	                            break;
+	                        case 6:
+	                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                            personHair.style.backgroundSize = 'cover';
+	                            break;
+
+	                        default:
+	                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                            personHair.style.backgroundSize = 'cover';
+
+	                            break;
+	                    }
+
+
+                } else {
+                    switch (hairIndex) {
+                        case 1:
+                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                            personHair.style.backgroundSize = 'cover';
+                            break;
+                        case 2:
+                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                            personHair.style.backgroundSize = 'cover';
+                            break;
+                        case 3:
+                            personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                            personHair.style.backgroundSize = 'cover';
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        default:
+                            pesronSkin.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+
+                            break;
+                    }
+
+
+}
+
+
+            } 
+            else if (i === 2) {
+
+
+                plusClothesSlides(1);
+
+                if (check === 'false') {
+	            	switch (clothesIndex) {
+	                        case 1:
+	                            break;
+	                        case 2:
+	                            break;
+	                        case 3:
+	                            break;
+	                        case 4:
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.backgroundSize = 'cover';
+	                            break;
+	                        case 5:
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.backgroundSize = 'cover';
+	                            break;
+	                        case 6:
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.backgroundSize = 'cover';
+	                            break;
+
+	                        default:
+	                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	                            personClothes.style.backgroundSize = 'cover';
+
+	                            break;
+	                    }
+
+
+                } else {
+                    switch (clothesIndex) {
+                        case 1:
+                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            personClothes.style.backgroundSize = 'cover';
+                            break;
+                        case 2:
+                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            personClothes.style.backgroundSize = 'cover';
+                            break;
+                        case 3:
+                            personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            personClothes.style.backgroundSize = 'cover';
+                            break;
+                        case 4:
+                            break;
+                        case 5:
+                            break;
+                        case 6:
+                            break;
+                        default:
+                            pesronSkin.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                            pesronSkin.style.backgroundSize = 'cover';
+
+                            break;
+                    }
+
+				}
+				console.log(construct)
+			}
+
+        });
+
     }
 
-    candidateBio.innerHTML = bio.value;
-});
+    /////////////////////////////////////////////ЗАПИСЬ В ГЛАВНУЮ КАРТУ
+
+    readyBtn.addEventListener('click', function() {
+        custom.style.display = 'none';
+        main.classList.add('fadeIn');
+        main.style.display = 'block';
+        candidateName.innerHTML = name.value;
+        candidateAge.innerHTML = age.value;
+
+
+        if (male.checked === true) {
+            candidateSex.innerHTML = male.value;
+            photo.style.background = 'none';
+            photo.appendChild(construct);
+        } else {
+            candidateSex.innerHTML = female.value;
+            photo.style.background = 'none';
+            photo.appendChild(construct);
+        }
+
+        candidateBio.innerHTML = bio.value;
+    });
 
 
 
