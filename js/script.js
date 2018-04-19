@@ -61,22 +61,22 @@ window.addEventListener('DOMContentLoaded', function() {
     radioBlock.addEventListener('change', function() {
     	sexCheck();
         if (event.target.value === 'Женский') {
-            pesronSkin.style.background = 'url("../Diploma_full/img/skin/skin-4.png") center no-repeat';
+            pesronSkin.style.background = 'url("./img/skin/skin-4.png") center no-repeat';
 pesronSkin.style.backgroundSize = 'cover';
-personHair.style.background = 'url("../Diploma_full/img/hair/construct/hair-6.png") center no-repeat';
+personHair.style.background = 'url("./img/hair/construct/hair-6.png") center no-repeat';
 personHair.style.backgroundSize = 'cover';
-personClothes.style.background = 'url("../Diploma_full/img/clothes/construct/clothes-5.png") center no-repeat';
+personClothes.style.background = 'url("./img/clothes/construct/clothes-5.png") center no-repeat';
 personClothes.style.backgroundSize = 'cover';
 console.log(flag);
 
 
         } else {
             
-            pesronSkin.style.background = 'url("../Diploma_full/img/skin/skin-1.png") center no-repeat';
+            pesronSkin.style.background = 'url("./img/skin/skin-1.png") center no-repeat';
             pesronSkin.style.backgroundSize = 'cover';
-            personHair.style.background = 'url("../Diploma_full/img/hair/construct/hair-1.png") center no-repeat';
+            personHair.style.background = 'url("./img/hair/construct/hair-1.png") center no-repeat';
             personHair.style.backgroundSize = 'cover';
-            personClothes.style.background = 'url("../Diploma_full/img/clothes/construct/clothes-1.png") center no-repeat';
+            personClothes.style.background = 'url("./img/clothes/construct/clothes-1.png") center no-repeat';
             personClothes.style.backgroundSize = 'cover';
             console.log(flag);
         }
@@ -198,51 +198,50 @@ return flag;
             	plusSkinSlides(-1);
             	console.log('skinInd'+skinIndex);
             		 console.log('check '+check)
-	                // if(skinIndex === 1 || skinIndex === 2 || skinIndex ===3 ){
-	                	if(check ==='false'){
+	                if(skinIndex === 1 || skinIndex === 2 || skinIndex ===3 ){
+	                	// if(check ==='false'){
 		                
 		             
-		                pesronSkin.style.background = 'url("../Diploma_full/img/skin/skin-'+skinIndex+'.png") center no-repeat';
+		                pesronSkin.style.background = 'url("./img/skin/skin-'+skinIndex+'.png") center no-repeat';
 		                pesronSkin.style.backgroundSize = 'cover';
 		                
 		            }
 		            
 	                // }
-	                // else if(skinIndex === 4  || skinIndex === 5 || skinIndex === 6){
-	                	if(check ==='true'){
+	                else if(skinIndex === 4  || skinIndex === 5 || skinIndex === 6){
+	                	// if(check ==='true'){
 
-	                	pesronSkin.style.background = 'url("../Diploma_full/img/skin/skin-' +skinIndex+ '.png") center no-repeat';
+	                	pesronSkin.style.background = 'url("./img/skin/skin-' +skinIndex+ '.png") center no-repeat';
 		                pesronSkin.style.backgroundSize = 'cover';
 		                console.log(0)
 		            // }
 	                }
             } else if (i === 1) {
-                console.log('!888!!' + hairIndex);
                 
-                for(let t = 0; t < 6; t++){
-                	if(hairIndex === 1  || hairIndex === 2 || hairIndex === 3){
-                		if(flag === 'false'){
+                // for(let t = 0; t < 6; t++){
+                	// if(hairIndex === 1  || hairIndex === 2 || hairIndex === 3){
+                		// if(flag === 'false'){
                 			plusHairSlides(-1);
-	                	personHair.style.background = 'url("../Diploma_full/img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                	personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
 	                	personHair.style.backgroundSize = 'cover';
-	                }
+	                // }
 	                
-                	}
-                	else{
-                		personHair.style.background = 'url("../Diploma_full/img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
-	                	personHair.style.backgroundSize = 'cover';
-                	}
-                }
+                	// }
+                	// else{
+                	// 	personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+	                // 	personHair.style.backgroundSize = 'cover';
+                	// }
+                // }
             } else if (i === 2) {
 
                 
                 plusClothesSlides(-1);
                 for(let t = 0; t < 6; t++){
                 	if(clothesIndex === 1 || clothesIndex === 2 || clothesIndex === 3){
-                personClothes.style.background = 'url("../Diploma_full/img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
                 personClothes.style.backgroundSize = 'cover';
 } else{
-	personClothes.style.background = 'url("../Diploma_full/img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+	personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
                 personClothes.style.backgroundSize = 'cover';
 }
                 }
@@ -258,14 +257,14 @@ return flag;
 
                     if (i === 0) {
                         plusSkinSlides(1);
-                        pesronSkin.style.background = 'url("../Diploma_full/img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                        pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
                         pesronSkin.style.backgroundSize = 'cover';
                     } else if (i === 1) {
                         console.log('!!!' + hairIndex)
                         // if (hairIndex === 0 || hairIndex === 1 || hairIndex === 2) {
                         console.log(hairIndex)
                         plusHairSlides(1);
-                        personHair.style.background = 'url("../Diploma_full/img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                        personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
                         personHair.style.backgroundSize = 'cover';
                         // }
 
@@ -273,7 +272,7 @@ return flag;
 
                         // if (clothesIndex === 0 || clothesIndex === 1 || clothesIndex === 2) {
                         plusClothesSlides(1);
-                        personClothes.style.background = 'url("../Diploma_full/img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                        personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
                         personClothes.style.backgroundSize = 'cover';
 
                     }
@@ -283,13 +282,13 @@ return flag;
                 // // } else {
                 //     if (i === 0) {
                 //         plusSkinSlides(1);
-                //         pesronSkin.style.background = 'url("../Diploma_full/img/skin/skin-' + skinIndex + '.png") center no-repeat';
+                //         pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
                 //         pesronSkin.style.backgroundSize = 'cover';
                 //     } else if (i === 1) {
                 //         console.log('!!!' + hairIndex)
                 //         if (hairIndex === 3 || hairIndex === 4 || hairIndex === 5) {
                 //             plusHairSlides(1);
-                //             personHair.style.background = 'url("../Diploma_full/img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
+                //             personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
                 //             personHair.style.backgroundSize = 'cover';
                 //         }
 
@@ -297,7 +296,7 @@ return flag;
 
                 //         if (clothesIndex === 3 || clothesIndex === 4 || clothesIndex === 5) {
                 //             plusClothesSlides(1);
-                //             personClothes.style.background = 'url("../Diploma_full/img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
+                //             personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
                 //             personClothes.style.backgroundSize = 'cover';
 
                 //         }
