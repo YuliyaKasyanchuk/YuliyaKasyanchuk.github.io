@@ -606,8 +606,8 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     /////////////////////////////////////////////ЗАПИСЬ В ГЛАВНУЮ КАРТУ
-    let progressBar = document.getElementsByClassName('progress-bar')[0],
-    	resultCount = document.getElementsByClassName('result-count')[0];
+    let progressBar = document.getElementsByClassName('progress-bar'),
+    	resultCount = document.getElementsByClassName('result-count');
 
     readyBtn.addEventListener('click', function() {
         custom.style.display = 'none';
@@ -634,12 +634,32 @@ window.addEventListener('DOMContentLoaded', function() {
         }
 
         candidateBio.innerHTML = bio.value;
-        progressBar.style.height = '0%';
-        resultCount.innerHTML = '0%';
+        for(let i = 0; i < 3; i++)
+        {
+        	progressBar[i].style.height = '0%';
+        	resultCount[i].innerHTML = '0%';
+        }
+        
     });
 
 
-    // ОБНУЛЕНИЕ РЕЗУЛЬТАТОВ
+    // СБРОСИТЬ РЕЗУЛЬТАТОВ
+
+    let resetBtn = document.getElementById('reset');
+
+    resetBtn.addEventListener('click', function(){
+    	main.classList.add('fadeOut');
+        setTimeout(function() {
+            main.style.display = 'none';
+        }, 2000);
+        setTimeout(function() {
+            custom.classList.add('fadeIn');
+            custom.style.display = 'flex';
+            customInfo.style.display = 'block';
+            customChar.style.display = 'block';
+            customStyle.style.display = 'block';
+        }, 2000);
+    });
 
 
 
