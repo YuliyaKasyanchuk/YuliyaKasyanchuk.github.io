@@ -56,6 +56,7 @@ window.addEventListener('DOMContentLoaded', function() {
         construct = document.querySelector('.construct'),
         radioBlock = document.querySelector('.radio'),
         skinNumber = 0;
+
     var flag = false;
     var check = sexCheck();
 
@@ -117,6 +118,7 @@ window.addEventListener('DOMContentLoaded', function() {
     	female = document.getElementById('female'),
         male = document.getElementById('male'),
         sex = document.getElementsByName('sex');
+
 
     for (let i = 0; i < 3; i++) {
 
@@ -599,15 +601,21 @@ window.addEventListener('DOMContentLoaded', function() {
 
 				}
 				console.log(construct)
+
+        console.log('////////////////////////')
+    	console.log(clone)
+    	 console.log('////////////////////////')
 			}
 
         });
-
+	var clone = construct;
+	
     }
 
     /////////////////////////////////////////////ЗАПИСЬ В ГЛАВНУЮ КАРТУ
     let progressBar = document.getElementsByClassName('progress-bar'),
     	resultCount = document.getElementsByClassName('result-count');
+    console.log(progressBar)
 
     readyBtn.addEventListener('click', function() {
         custom.style.display = 'none';
@@ -624,17 +632,19 @@ window.addEventListener('DOMContentLoaded', function() {
             // if(personSkin.value === '' && personHair.value = '' && personClothes.value = ''){
             // 	photo.classList.add('photo-1');
             // }
-            photo.appendChild(construct);
+            // photo.appendChild(construct);
+            photo.appendChild(clone);
             photo.style.background = 'none';
         } else {
             candidateSex.innerHTML = female.value;
             // photo.style.background = 'none';
-            photo.appendChild(construct);
+            // photo.appendChild(construct);
+            photo.appendChild(clone);
             photo.style.background = 'none';
         }
 
         candidateBio.innerHTML = bio.value;
-        for(let i = 0; i < 3; i++)
+        for(let i = 0; i < progressBar.length; i++)
         {
         	progressBar[i].style.height = '0%';
         	resultCount[i].innerHTML = '0%';
@@ -646,6 +656,7 @@ window.addEventListener('DOMContentLoaded', function() {
     // СБРОСИТЬ РЕЗУЛЬТАТОВ
 
     let resetBtn = document.getElementById('reset');
+    	// customChar = document.querySelector('custom-char');
 
     resetBtn.addEventListener('click', function(){
     	main.classList.add('fadeOut');
@@ -658,6 +669,7 @@ window.addEventListener('DOMContentLoaded', function() {
             customInfo.style.display = 'block';
             customChar.style.display = 'block';
             customStyle.style.display = 'block';
+            customChar.insertBefore(construct, readyBtn);
         }, 2000);
     });
 
