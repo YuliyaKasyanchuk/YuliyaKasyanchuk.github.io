@@ -670,6 +670,9 @@ window.addEventListener('DOMContentLoaded', function() {
             customChar.style.display = 'block';
             customStyle.style.display = 'block';
             customChar.insertBefore(construct, readyBtn);
+            bio.value = '';
+            name.value = '';
+            age.value = '';
         }, 2000);
     });
 
