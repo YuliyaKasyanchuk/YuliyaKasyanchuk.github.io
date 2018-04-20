@@ -686,13 +686,13 @@ let voting = document.getElementById('voting');
 	
 
 	voting.addEventListener('click', function(){
-		var max= 100,
+		var max= 75,
 			summ = 0,
 			randomSumm = 0,
 			arr = [];
 
 			function random(){
-				var res = Math.floor(Math.random()*max);
+				var res = Math.floor(Math.random()*75);
 				return res;
 			}
 
@@ -708,6 +708,31 @@ let voting = document.getElementById('voting');
 
         	
         }
+
+	});
+
+// ВМЕШАТЬСЯ В ВЫБОРЫ/////////////////////////////////////////////////////////////////////////
+
+let crime = document.getElementById('crime'),
+	clickBtn = 1;
+	
+
+	crime.addEventListener('click', function(){
+		if(clickBtn ===1){
+    		console.log(parseInt(resultCount[0].textContent+25))
+			var result = parseInt(resultCount[0].textContent)+25,
+				resultMin = parseInt(resultCount[1].textContent)-25;
+
+    		resultCount[0].innerHTML = result + ' %';
+    		progressBar[0].style.height = (result*1.6) + 'px';
+    		resultCount[1].innerHTML = resultMin + ' %';
+    		progressBar[1].style.height = (resultMin*1.6) + 'px';
+    		clickBtn = 0;
+    	
+    }
+    else{
+    	return false;
+    }
 
 	});
 
