@@ -705,7 +705,6 @@ let voting = document.getElementById('voting');
     		resultCount[i].innerHTML = arr[i]  + ' %';
     		var result = parseInt(resultCount[i].textContent);
     		progressBar[i].style.height = (result*1.6) + 'px';
-    		console.log('-'+result);
 		if(resultCount[0].textContent > resultCount[1].textContent){
 			card[0].classList.add('main-cards-item-active');
 			card[1].classList.remove('main-cards-item-active');
@@ -741,6 +740,15 @@ let crime = document.getElementById('crime'),
     		progressBar[0].style.height = (result*1.6) + 'px';
     		resultCount[1].innerHTML = resultMin + ' %';
     		progressBar[1].style.height = (resultMin*1.6) + 'px';
+
+    		if(resultCount[0].textContent > resultCount[1].textContent){
+			card[0].classList.add('main-cards-item-active');
+			card[1].classList.remove('main-cards-item-active');
+		}
+		else{
+			card[1].classList.add('main-cards-item-active');
+			card[0].classList.remove('main-cards-item-active');
+		}
     		clickBtn = 0;
     	
     }
