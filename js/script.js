@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
+
+
     // MODAl////////////////////////////////////////////////////////////////
     let popupBtn = document.getElementById('popup-btn'),
         overlay = document.querySelector('.overlay'),
@@ -59,6 +61,10 @@ window.addEventListener('DOMContentLoaded', function() {
 
     var flag = false;
     var check = sexCheck();
+
+    age.addEventListener('keyup',function(e) {
+    	this.value = this.value.replace( /\D/g, "")
+    });
 
     radioBlock.addEventListener('change', function() {
 
@@ -619,7 +625,7 @@ window.addEventListener('DOMContentLoaded', function() {
         main.classList.add('fadeIn');
         main.style.display = 'block';
         candidateName.innerHTML = name.value;
-        candidateAge.innerHTML = age.value;
+        candidateAge.innerHTML = (age.value + ' лет');
 
 
 
@@ -659,7 +665,7 @@ window.addEventListener('DOMContentLoaded', function() {
     	main.classList.add('fadeOut');
         setTimeout(function() {
             main.style.display = 'none';
-        }, 2000);
+        }, 200);
         setTimeout(function() {
             custom.classList.add('fadeIn');
             custom.style.display = 'flex';
@@ -670,11 +676,40 @@ window.addEventListener('DOMContentLoaded', function() {
             bio.value = '';
             name.value = '';
             age.value = '';
-        }, 2000);
+        }, 200);
     });
 
 
+// ЧЕСТНОЕ ГОЛОСОВАНИЕ/////////////////////////////////////////////////////////////////////////
 
+let voting = document.getElementById('voting');
+	
+
+	voting.addEventListener('click', function(){
+		var max= 100,
+			summ = 0,
+			randomSumm = 0,
+			arr = [];
+
+			function random(){
+				var res = Math.floor(Math.random()*max);
+				return res;
+			}
+
+			var res = random();
+			
+			arr.push(res);
+			arr.push(100-res);
+		for(let i = 0; i < progressBar.length; i++){
+
+    		resultCount[i].innerHTML = arr[i]  + ' %';
+    		var result = parseInt(resultCount[i].textContent);
+    		progressBar[i].style.height = (result*1.6) + 'px';
+
+        	
+        }
+
+	});
 
 
 
