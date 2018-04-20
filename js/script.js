@@ -705,14 +705,28 @@ let voting = document.getElementById('voting');
     		resultCount[i].innerHTML = arr[i]  + ' %';
     		var result = parseInt(resultCount[i].textContent);
     		progressBar[i].style.height = (result*1.6) + 'px';
-
+    		console.log('-'+result);
+		if(resultCount[0].textContent > resultCount[1].textContent){
+			card[0].classList.add('main-cards-item-active');
+			card[1].classList.remove('main-cards-item-active');
+		}
+		else{
+			card[1].classList.add('main-cards-item-active');
+			card[0].classList.remove('main-cards-item-active');
+		}
         	
         }
 
 	});
 
-// ВМЕШАТЬСЯ В ВЫБОРЫ/////////////////////////////////////////////////////////////////////////
 
+	
+	
+console.log('res'+resultCount[0].textContent)
+
+
+// ВМЕШАТЬСЯ В ВЫБОРЫ/////////////////////////////////////////////////////////////////////////
+let card = document.getElementsByClassName('main-cards-item');
 let crime = document.getElementById('crime'),
 	clickBtn = 1;
 	
@@ -735,6 +749,13 @@ let crime = document.getElementById('crime'),
     }
 
 	});
+// console.log('res'+resultCount[0].textContent)
+// 	if(resultCount[0].textContent > resultCount[1].textContent){
+// 		card[0].classList.add('.main-cards-item-active');
+// 	}
+// 	else{
+// 		card[1].classList.add('.main-cards-item-active');
+// 	}
 
 
 
