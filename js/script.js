@@ -43,6 +43,10 @@ window.addEventListener('DOMContentLoaded', function() {
         female = document.getElementById('female'),
         select = document.getElementById('select'),
         bio = document.getElementById('bio'),
+        item = document.querySelector('.main-cards-item'),
+        items = document.querySelectorAll('.main-cards-item'),
+
+        
         candidateName = document.querySelector('.name'),
         candidateAge = document.querySelector('.age'),
         candidateSex = document.querySelector('.sex'),
@@ -58,12 +62,22 @@ window.addEventListener('DOMContentLoaded', function() {
         construct = document.querySelector('.construct'),
         radioBlock = document.querySelector('.radio'),
         skinNumber = 0;
+        // let candidate = item.cloneNode(true);
+        // item.parentNode.insertBefore(candidate, item.nextSibling);
 
     var flag = false;
     var check = sexCheck();
 
     age.addEventListener('keyup',function(e) {
-    	this.value = this.value.replace( /\D/g, "")
+    	this.value = this.value.replace( /\D/g, "");
+        console.log(typeof(age))
+        console.log(age.value)
+        if(age.value > 70){
+
+            alert('Введите корректный возраст! Возраст может быть меньше 70лет!');
+            this.value = '';
+            return;
+        }
     });
 
     radioBlock.addEventListener('change', function() {
@@ -615,15 +629,36 @@ window.addEventListener('DOMContentLoaded', function() {
 	
     }
 
-    /////////////////////////////////////////////ЗАПИСЬ В ГЛАВНУЮ КАРТУ
+    /////////////////////////////////////////////ЗАПИСЬ В ГЛАВНУЮ КАРТУ////////////////////////////////
+
     let progressBar = document.getElementsByClassName('progress-bar'),
     	resultCount = document.getElementsByClassName('result-count');
+    var t = 0;
     console.log(progressBar)
-
+ 
     readyBtn.addEventListener('click', function() {
+
+    var candidate = item.cloneNode(true);
+
+       
+console.log(t)
+        if(t === 0){
+            item.parentNode.insertBefore(candidate, item.nextSibling);
+            item.classList.remove('main-cards-item-active');
+        }
         custom.style.display = 'none';
+        
+
         main.classList.add('fadeIn');
         main.style.display = 'block';
+       
+        // var array = [];
+        // array.push(items.length);
+        // console.log(array)
+        // if(item.length > 3){
+        //     return;
+        // }
+        
         candidateName.innerHTML = name.value;
         candidateAge.innerHTML = (age.value + ' лет');
 
@@ -652,6 +687,7 @@ window.addEventListener('DOMContentLoaded', function() {
         	progressBar[i].style.height = '0%';
         	resultCount[i].innerHTML = '0%';
         }
+        t = 1;
         
     });
 
@@ -682,39 +718,51 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 // ЧЕСТНОЕ ГОЛОСОВАНИЕ/////////////////////////////////////////////////////////////////////////
-
+function random(num){
+    res = Math.floor(Math.random()*num);
+    return res;
+}
 let voting = document.getElementById('voting');
-	
+
 
 	voting.addEventListener('click', function(){
 		var max= 75,
 			summ = 0,
 			randomSumm = 0,
-			arr = [];
+            res = 0,
+            res2 = 0,
+            res_2 = 0,
+			arr = [],
+            mas = [];
 
-			function random(){
-				var res = Math.floor(Math.random()*75);
-				return res;
-			}
 
-			var res = random();
 			
-			arr.push(res);
-			arr.push(100-res);
+
+                var res_1 = random(75);
+                  res2 = 100 - res_1;
+          
+                    var t = 0;
+                    res_2 = random(res2);
+                     t = res_1+res_2;
+                    var res_3 = 100-(t);
+			arr.push(res_1,res_2,res_3);
+            console.log(arr)
+
 		for(let i = 0; i < progressBar.length; i++){
 
     		resultCount[i].innerHTML = arr[i]  + ' %';
     		var result = parseInt(resultCount[i].textContent);
+           
     		progressBar[i].style.height = (result*1.6) + 'px';
-		if(resultCount[0].textContent > resultCount[1].textContent){
-			card[0].classList.add('main-cards-item-active');
-			card[1].classList.remove('main-cards-item-active');
-		}
-		else{
-			card[1].classList.add('main-cards-item-active');
-			card[0].classList.remove('main-cards-item-active');
-		}
-        	
+            var max = Math.max.apply(null, arr);
+            if(arr[i]=== max){
+                card[i].classList.add('main-cards-item-active');
+
+            }
+            else{
+                card[i].classList.remove('main-cards-item-active');
+            }
+
         }
 
 	});
@@ -733,23 +781,36 @@ let crime = document.getElementById('crime'),
 
 	crime.addEventListener('click', function(){
 		if(clickBtn ===1){
-    		console.log(parseInt(resultCount[0].textContent+25))
-			var result = parseInt(resultCount[0].textContent)+25,
-				resultMin = parseInt(resultCount[1].textContent)-25;
 
-    		resultCount[0].innerHTML = result + ' %';
-    		progressBar[0].style.height = (result*1.6) + 'px';
-    		resultCount[1].innerHTML = resultMin + ' %';
-    		progressBar[1].style.height = (resultMin*1.6) + 'px';
+   //  		console.log(parseInt(resultCount[0].textContent+25))
 
-    		if(resultCount[0].textContent > resultCount[1].textContent){
-			card[0].classList.add('main-cards-item-active');
-			card[1].classList.remove('main-cards-item-active');
-		}
-		else{
-			card[1].classList.add('main-cards-item-active');
-			card[0].classList.remove('main-cards-item-active');
-		} 
+			var result_1 = parseInt(resultCount[0].textContent)+25,
+				result_2 = parseInt(resultCount[1].textContent),
+                result_3 = parseInt(resultCount[2].textContent),
+                random_1 = random(25),
+                random_2 = 25 - random_1;
+                if(result_2-random_1 < 0){
+                    result_3 -=random_1;
+                }
+                else if(result_2-random_1 > 0){
+                    result_2 -=random_1;
+                }
+                if(result_3-random_2 < 0){
+                    result_2 -=random_2;
+                }
+                
+                else if(result_3-random_2 > 0){
+                   result_3 -=random_2; 
+                }
+                console.log('res_2 '+random_1)
+                console.log('res_3 '+random_2)
+    		resultCount[0].innerHTML = result_1 + ' %';
+    		progressBar[0].style.height = (result_1*1.6) + 'px';
+    		resultCount[1].innerHTML = result_2 + ' %';
+    		progressBar[1].style.height = (result_2*1.6) + 'px';
+            resultCount[2].innerHTML = result_3 + ' %';
+            progressBar[2].style.height = (result_3*1.6) + 'px';
+            
     		clickBtn = 0;
     	
     }
@@ -758,14 +819,5 @@ let crime = document.getElementById('crime'),
     }
 
 	});
-// console.log('res'+resultCount[0].textContent)
-// 	if(resultCount[0].textContent > resultCount[1].textContent){
-// 		card[0].classList.add('.main-cards-item-active');
-// 	}
-// 	else{
-// 		card[1].classList.add('.main-cards-item-active');
-// 	}
-
-
 
 });
