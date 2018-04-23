@@ -662,6 +662,7 @@ window.addEventListener('DOMContentLoaded', function() {
     	// customChar = document.querySelector('custom-char');
 
     resetBtn.addEventListener('click', function(){
+    	clickBtn= 1;
     	main.classList.add('fadeOut');
         setTimeout(function() {
             main.style.display = 'none';
@@ -748,7 +749,7 @@ let crime = document.getElementById('crime'),
 		else{
 			card[1].classList.add('main-cards-item-active');
 			card[0].classList.remove('main-cards-item-active');
-		}
+		} 
     		clickBtn = 0;
     	
     }
