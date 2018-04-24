@@ -65,8 +65,9 @@ window.addEventListener('DOMContentLoaded', function() {
         // let candidate = item.cloneNode(true);
         // item.parentNode.insertBefore(candidate, item.nextSibling);
 
-    var flag = false;
-    var check = sexCheck();
+    var flag = true;
+    var check = 'false';
+    console.log('check -***********-  '+check)
 
     age.addEventListener('keyup',function(e) {
     	this.value = this.value.replace( /\D/g, "");
@@ -80,53 +81,9 @@ window.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    radioBlock.addEventListener('change', function() {
-
-        if (event.target.value === 'Женский') {
-            pesronSkin.style.background = 'url("./img/skin/skin-4.png") center no-repeat';
-            pesronSkin.style.backgroundSize = 'cover';
-            personHair.style.background = 'url("./img/hair/construct/hair-6.png") center no-repeat';
-            personHair.style.backgroundSize = 'cover';
-            personClothes.style.background = 'url("./img/clothes/construct/clothes-5.png") center no-repeat';
-            personClothes.style.backgroundSize = 'cover';
-
-            check = 'false';
-            
 
 
-        } else {
-
-            pesronSkin.style.background = 'url("./img/skin/skin-1.png") center no-repeat';
-            pesronSkin.style.backgroundSize = 'cover';
-            personHair.style.background = 'url("./img/hair/construct/hair-1.png") center no-repeat';
-            personHair.style.backgroundSize = 'cover';
-            personClothes.style.background = 'url("./img/clothes/construct/clothes-1.png") center no-repeat';
-            personClothes.style.backgroundSize = 'cover';
-            check = 'true';
-        }
-    });
-    console.log('flag-check ' + check)
-    select.addEventListener('click', function() {
-        candidateViews.innerHTML = select.options[select.selectedIndex].value;
-
-
-    });
-
-    /////////////////////////////////////////////////////////////////////////////////////////////////////
-
-    function sexCheck() {
-        if (document.getElementById('female').checked) {
-            flag = true;
-        } else if (document.getElementById('male').checked) {
-            flag = false;
-        }
-        return flag;
-    }
-    console.log('flag ' + flag)
-
-    // SLIDER//////////////////////////////////////////////////////////////////////////////////////////////
-
-    let slideIndex = 1,
+   let slideIndex = 1,
         skinIndex = 1,
         clothesIndex = 1,
         hairIndex = 1,
@@ -135,84 +92,256 @@ window.addEventListener('DOMContentLoaded', function() {
         clothesSlides = document.getElementsByClassName('clothes-style'),
         prev = document.querySelectorAll('.prev'),
         next = document.querySelectorAll('.next')
-    	female = document.getElementById('female'),
+        female = document.getElementById('female'),
         male = document.getElementById('male'),
-        sex = document.getElementsByName('sex');
+        sex = document.getElementsByName('sex'),
+        skinDiv =  document.querySelector('.skin');
+
+
+
+
+    radioBlock.addEventListener('change', function() {
+
+        if (event.target.value === 'Женский') {
+            pesronSkin.style.background = 'url("./img/skin/skin-5.png") center no-repeat';
+            pesronSkin.style.backgroundSize = 'cover';
+            personHair.style.background = 'url("./img/hair/construct/hair-5.png") center no-repeat';
+            personHair.style.backgroundSize = 'cover';
+            personClothes.style.background = 'url("./img/clothes/construct/clothes-5.png") center no-repeat';
+            personClothes.style.backgroundSize = 'cover';
+
+            check = 'true';
+            currentSlideForWomen(5);
+            
+
+        } else {
+
+            pesronSkin.style.background = 'url("./img/skin/skin-1.png") center no-repeat';
+            pesronSkin.style.backgroundSize = 'cover';
+            personHair.style.background = 'url("./img/hair/construct/hair-1.png") center no-repeat';
+            personHair.style.backgroundSize = 'cover';
+            personClothes.style.background = 'url("./img/clothes/construct/clothes-1.png") center no-repeat';
+            personClothes.style.backgroundSize = 'cover'
+            check = 'false';
+            currentSlide(1);
+        }
+    });
+    select.addEventListener('click', function() {
+        candidateViews.innerHTML = select.options[select.selectedIndex].value;
+
+
+    });
+
+   
+
+    /////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function sexCheck() {
+        if (radioBlock.value === 'Женский') {
+            flag = false;
+        } else {
+            flag = true;
+        }
+        return flag;
+    }
+    console.log('flag/////////// ' + flag)
+
+    // SLIDER//////////////////////////////////////////////////////////////////////////////////////////////
+
+    
+ 
 
 
     for (let i = 0; i < 3; i++) {
 
         function showSkinSlides(n) {
 
-            if (n > skinSlides.length) {
+            if (n > skinSlides.length/2) {
                 slideIndex = 1;
                 skinIndex = 1;
 
             };
             if (n < 1) {
+                slideIndex = skinSlides.length/2;
+                skinIndex = skinSlides.length/2;
+            };
+           
+                for (let i = 0; i < skinSlides.length/2; i++) {
+                skinSlides[i].style.display = "none";
+                  // console.log('i= '+ i);
+             console.log('index= '+ skinIndex);
+              console.log('slide= '+ slideIndex);
+            }
+               for (let i = 3; i < skinSlides.length; i++) {
+                skinSlides[i].style.display = "none";
+            }
+
+                
+                 skinSlides[skinIndex - 1].style.display = 'block';
+              
+            
+            
+            
+            
+        }
+        function showSkinSlidesForWomen(n) {
+
+            if (n > skinSlides.length) {
+                slideIndex = 4;
+                skinIndex = 4;
+
+            };
+            if (n < 4) {
                 slideIndex = skinSlides.length;
                 skinIndex = skinSlides.length;
             };
 
-            for (let i = 0; i < skinSlides.length; i++) {
+     for (let i = 3; i < skinSlides.length; i++) {
                 skinSlides[i].style.display = "none";
+             console.log('index= '+ skinIndex);
+              console.log('slide= '+ slideIndex);
+    }
+    for (let i = 0; i < skinSlides.length/2; i++) {
+                skinSlides[i].style.display = "none";
+                  console.log('i= '+ i);
+             console.log('index= '+ skinIndex);
+    }
+    
+            if(skinIndex === 4 ||skinIndex === 5 || skinIndex === 6){
+
+             skinSlides[skinIndex - 1].style.display = 'block';
             }
 
-            skinSlides[skinIndex - 1].style.display = 'block';
-
-
         }
+        
 
         function showClothesSlides(n) {
-            if (n > clothesSlides.length) {
+            if (n > clothesSlides.length/2) {
                 slideIndex = 1;
                 clothesIndex = 1;
             };
             if (n < 1) {
-                slideIndex = clothesSlides.length;
-                clothesIndex = clothesSlides.length;
+                slideIndex = clothesSlides.length/2;
+                clothesIndex = clothesSlides.length/2;
             };
-            for (let i = 0; i < clothesSlides.length; i++) {
+            for (let i = 0; i < clothesSlides.length/2; i++) {
+                clothesSlides[i].style.display = "none";
+            }
+             for (let i = 3; i < clothesSlides.length; i++) {
                 clothesSlides[i].style.display = "none";
             }
 
             clothesSlides[clothesIndex - 1].style.display = 'block';
         }
 
+        function showClothesSlidesForWomen(n) {
+
+            if (n > clothesSlides.length) {
+                slideIndex = 4;
+                clothesIndex = 4;
+
+            };
+            if (n < 4) {
+                slideIndex = clothesSlides.length;
+                clothesIndex = clothesSlides.length;
+            };
+
+     for (let i = 3; i < clothesSlides.length; i++) {
+                clothesSlides[i].style.display = "none";
+             
+    }
+    for (let i = 0; i < clothesSlides.length/2; i++) {
+                clothesSlides[i].style.display = "none";
+    }
+    
+            if(clothesIndex === 4 ||clothesIndex === 5 || clothesIndex === 6){
+
+             clothesSlides[clothesIndex - 1].style.display = 'block';
+            }
+
+        }
         function showHairSlides(n) {
-            if (n > hairSlides.length) {
+            if (n > hairSlides.length/2) {
                 slideIndex = 1;
                 hairIndex = 1;
             };
             if (n < 1) {
-                slideIndex = hairSlides.length;
-                hairIndex = hairSlides.length;
+                slideIndex = hairSlides.length/2;
+                hairIndex = hairSlides.length/2;
             };
-            for (let i = 0; i < hairSlides.length; i++) {
+            for (let i = 0; i < hairSlides.length/2; i++) {
+                hairSlides[i].style.display = "none";
+            }
+            for (let i = 3; i < hairSlides.length; i++) {
                 hairSlides[i].style.display = "none";
             }
 
+
             hairSlides[hairIndex - 1].style.display = 'block';
+        }
+        function showHairSlidesForWomen(n) {
+
+            if (n > hairSlides.length) {
+                slideIndex = 4;
+                hairIndex = 4;
+
+            };
+            if (n < 4) {
+                slideIndex = hairSlides.length;
+               hairIndex = hairSlides.length;
+            };
+
+     for (let i = 3; i < hairSlides.length; i++) {
+                hairSlides[i].style.display = "none";
+             
+    }
+    for (let i = 0; i < hairSlides.length/2; i++) {
+                hairSlides[i].style.display = "none";
+    }
+    
+            if(hairIndex === 4 ||hairIndex === 5 || hairIndex === 6){
+
+             hairSlides[hairIndex - 1].style.display = 'block';
+            }
+
         }
 
         function plusSkinSlides(n) {
             showSkinSlides(skinIndex += n);
-
         }
+        function plusSkinSlidesForWomen(n) {
+            showSkinSlidesForWomen(skinIndex += n);
+        }
+       
 
         function plusClothesSlides(n) {
             showClothesSlides(clothesIndex += n);
 
         }
+        function plusClothesSlidesForWomen(n) {
+            showClothesSlidesForWomen(clothesIndex += n);
+
+        }
+
 
         function plusHairSlides(n) {
             showHairSlides(hairIndex += n);
 
         }
+        function plusHairSlidesForWomen(n) {
+            showHairSlidesForWomen(hairIndex += n);
+
+        }
 
         function currentSlide(n) {
             showSkinSlides(skinIndex = n);
-            showClothesSlides(slideIndex = n);
+            showClothesSlides(clothesIndex = n);
+            showHairSlides(hairIndex = n);
+        }
+        function currentSlideForWomen(n) {
+            showSkinSlidesForWomen(skinIndex = n);
+            showClothesSlidesForWomen(clothesIndex = n);
+            showHairSlidesForWomen(hairIndex = n);
         }
 
 
@@ -221,13 +350,14 @@ window.addEventListener('DOMContentLoaded', function() {
         prev[i].addEventListener('click', function() {
             if (i === 0) {
 
-                plusSkinSlides(-1);
+               
 
-                console.log('skinInd' + skinIndex);
-                console.log('check ' + check)
-                if (check === 'false') {
-
-                    switch (skinIndex) {
+                console.log('skinInd - ' + skinIndex);
+                console.log('check ***************//////////--------' + check);
+                 console.log(skinSlides);
+                if (check === 'true') {
+                plusSkinSlidesForWomen(-1);
+                     switch (skinIndex) {
                         case 1:
                             break;
                         case 2:
@@ -256,6 +386,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
                 } else {
+                plusSkinSlides(-1);
                     switch (skinIndex) {
                         case 1:
                             pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
@@ -285,8 +416,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
                 }
             } else if (i === 1) {
-    			plusHairSlides(-1);
-    			if (check === 'false') {
+    			
+    			if (check === 'true') {
+                    plusHairSlidesForWomen(-1);
 	            	switch (hairIndex) {
 	                        case 1:
 	                            break;
@@ -316,6 +448,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
                 } else {
+                    plusHairSlides(-1);
                     switch (hairIndex) {
                         case 1:
                             personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
@@ -350,9 +483,10 @@ window.addEventListener('DOMContentLoaded', function() {
             else if (i === 2) {
 
 
-                plusClothesSlides(-1);
+                
 
-                if (check === 'false') {
+                if (check === 'true') {
+                    plusClothesSlidesForWomen(-1);
 	            	switch (clothesIndex) {
 	                        case 1:
 	                            break;
@@ -382,6 +516,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
                 } else {
+                    plusClothesSlides(-1);
                     switch (clothesIndex) {
                         case 1:
                             personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
@@ -426,12 +561,12 @@ window.addEventListener('DOMContentLoaded', function() {
         next[i].addEventListener('click', function() {
                if (i === 0) {
 
-                plusSkinSlides(1);
+                
 
                 console.log('skinInd' + skinIndex);
                 console.log('check ' + check)
-                if (check === 'false') {
-
+                if (check === 'true') {
+                plusSkinSlidesForWomen(1);
                     switch (skinIndex) {
                         case 1:
                             break;
@@ -461,6 +596,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
                 } else {
+                    plusSkinSlides(1);
                     switch (skinIndex) {
                         case 1:
                             pesronSkin.style.background = 'url("./img/skin/skin-' + skinIndex + '.png") center no-repeat';
@@ -490,8 +626,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
                 }
             } else if (i === 1) {
-    			plusHairSlides(1);
-    			if (check === 'false') {
+    			
+    			if (check === 'true') {
+                    plusHairSlidesForWomen(1);
 	            	switch (hairIndex) {
 	                        case 1:
 	                            break;
@@ -521,6 +658,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
                 } else {
+                    plusHairSlides(1);
                     switch (hairIndex) {
                         case 1:
                             personHair.style.background = 'url("./img/hair/construct/hair-' + hairIndex + '.png") center no-repeat';
@@ -555,9 +693,10 @@ window.addEventListener('DOMContentLoaded', function() {
             else if (i === 2) {
 
 
-                plusClothesSlides(1);
+              
 
-                if (check === 'false') {
+                if (check === 'true') {
+                     plusClothesSlidesForWomen(1);
                 	
 	            	switch (clothesIndex) {
 	                        case 1:
@@ -588,7 +727,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
                 } else {
-                	
+                	  plusClothesSlides(1);
                     switch (clothesIndex) {
                         case 1:
                             personClothes.style.background = 'url("./img/clothes/construct/clothes-' + clothesIndex + '.png") center no-repeat';
@@ -634,7 +773,6 @@ window.addEventListener('DOMContentLoaded', function() {
     let progressBar = document.getElementsByClassName('progress-bar'),
     	resultCount = document.getElementsByClassName('result-count');
     var t = 0;
-    console.log(progressBar)
  
     readyBtn.addEventListener('click', function() {
 
@@ -746,8 +884,7 @@ let voting = document.getElementById('voting');
                      t = res_1+res_2;
                     var res_3 = 100-(t);
 			arr.push(res_1,res_2,res_3);
-            console.log(arr)
-
+            
 		for(let i = 0; i < progressBar.length; i++){
 
     		resultCount[i].innerHTML = arr[i]  + ' %';
@@ -777,12 +914,11 @@ console.log('res'+resultCount[0].textContent)
 let card = document.getElementsByClassName('main-cards-item');
 let crime = document.getElementById('crime'),
 	clickBtn = 1;
+var arr2 = [];
 	
 
 	crime.addEventListener('click', function(){
 		if(clickBtn ===1){
-
-   //  		console.log(parseInt(resultCount[0].textContent+25))
 
 			var result_1 = parseInt(resultCount[0].textContent)+25,
 				result_2 = parseInt(resultCount[1].textContent),
@@ -802,14 +938,35 @@ let crime = document.getElementById('crime'),
                 else if(result_3-random_2 > 0){
                    result_3 -=random_2; 
                 }
-                console.log('res_2 '+random_1)
-                console.log('res_3 '+random_2)
-    		resultCount[0].innerHTML = result_1 + ' %';
-    		progressBar[0].style.height = (result_1*1.6) + 'px';
-    		resultCount[1].innerHTML = result_2 + ' %';
-    		progressBar[1].style.height = (result_2*1.6) + 'px';
-            resultCount[2].innerHTML = result_3 + ' %';
-            progressBar[2].style.height = (result_3*1.6) + 'px';
+                arr2.push(result_1, result_2, result_3);
+
+                for(let i = 0; i < progressBar.length; i++){
+
+            resultCount[i].innerHTML = arr2[i]  + ' %';
+            var result = parseInt(resultCount[i].textContent);
+           
+            progressBar[i].style.height = (result*1.6) + 'px';
+            var max = Math.max.apply(null, arr2);
+            if(arr2[i]=== max){
+                card[i].classList.add('main-cards-item-active');
+
+            }
+            else{
+                card[i].classList.remove('main-cards-item-active');
+            }
+
+        }
+                // console.log('res_2 '+random_1)
+                // console.log('res_3 '+random_2)
+
+
+
+    		// resultCount[0].innerHTML = result_1 + ' %';
+    		// progressBar[0].style.height = (result_1*1.6) + 'px';
+    		// resultCount[1].innerHTML = result_2 + ' %';
+    		// progressBar[1].style.height = (result_2*1.6) + 'px';
+      //       resultCount[2].innerHTML = result_3 + ' %';
+      //       progressBar[2].style.height = (result_3*1.6) + 'px';
             
     		clickBtn = 0;
     	
