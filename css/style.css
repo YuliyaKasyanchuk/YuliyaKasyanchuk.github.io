@@ -292,6 +292,7 @@
 .main-cards-item .bio {
   font-size: 13px;
   font-weight: 400;
+      word-break: break-all;
 }
 
 .main-buttons {
@@ -437,6 +438,22 @@
 .custom-info input[type="text"]:focus {
   border: 2px solid rgba(31, 140, 226, 0.8);
 }
+.custom-info input[type="number"] {
+  width: 270px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #1c2028;
+  border: none;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.custom-info input[type="number"]:focus {
+  border: 2px solid rgba(31, 140, 226, 0.8);
+}
 
 .custom-info .radio {
   display: flex;
@@ -446,7 +463,11 @@
   padding-bottom: 30px;
   margin-left: 45px;
 }
-
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 .custom-info .radio label {
   margin: 0;
   margin-right: 30px;

@@ -68,18 +68,50 @@ window.addEventListener('DOMContentLoaded', function() {
     var flag = true;
     var check = 'false';
     console.log('check -***********-  '+check)
-
     age.addEventListener('keyup',function(e) {
-    	this.value = this.value.replace( /\D/g, "");
-        console.log(typeof(age))
-        console.log(age.value)
-        if(age.value > 70){
+        age.value = age.value.replace( /[\D\+\-]/g, "");
+    });
+    age.addEventListener('change',function(e) {
+    
+        
+        if(parseInt(age.value) < 35 || parseInt(age.value) > 70){
 
-            alert('Введите корректный возраст! Возраст может быть меньше 70лет!');
+            alert('Введите корректный возраст! Возраст может быть больше 70лет и меньше 35лет!');
             this.value = '';
+             console.log(typeof(parseInt(age.value)))
+        console.log(age.value)
             return;
         }
+        
     });
+    name.addEventListener('change',function(e) {
+        var regexp = /^[А-Яа-яЁё\s\-]+$/i;
+       if(!regexp.test(this.value)) {
+           e.preventDefault();
+           alert("Введите имя кириллицей! Использовать можно только '-'");
+           this.value = '';
+           return false;
+       }
+    
+    });
+
+    bio.addEventListener('change',function(e) {
+        var regexp = /^[А-Яа-яЁё\0-9\s\-]+$/i;
+       if(!regexp.test(this.value)) {
+           e.preventDefault();
+           alert("Введите текст кириллицей! Минимум 30 символов");
+           this.value = '';
+           return false;
+       }
+       if(this.value.length < 30){
+            alert("Минимум 30 символов");
+           return false;
+
+       }
+    
+    });
+
+
 
 
 
@@ -775,6 +807,10 @@ window.addEventListener('DOMContentLoaded', function() {
     var t = 0;
  
     readyBtn.addEventListener('click', function() {
+        if(name.value === '' || age.value=== '' || bio.value === ''){
+            alert('Заполните все поля формы!');
+            return;
+        }
 
     var candidate = item.cloneNode(true);
 
@@ -790,15 +826,12 @@ console.log(t)
         main.classList.add('fadeIn');
         main.style.display = 'block';
        
-        // var array = [];
-        // array.push(items.length);
-        // console.log(array)
-        // if(item.length > 3){
-        //     return;
-        // }
         
         candidateName.innerHTML = name.value;
+   
         candidateAge.innerHTML = (age.value + ' лет');
+        
+        
 
 
 
