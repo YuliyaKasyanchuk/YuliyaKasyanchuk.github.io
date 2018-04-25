@@ -905,7 +905,7 @@ console.log(t)
 
 // ЧЕСТНОЕ ГОЛОСОВАНИЕ/////////////////////////////////////////////////////////////////////////
 function random(num){
-    res = 1+Math.floor(Math.random()*(num-1));
+    res = Math.floor(Math.random()*num) +1;
     return res;
 }
 let voting = document.getElementById('voting');
@@ -924,7 +924,7 @@ let voting = document.getElementById('voting');
 
 			
 
-                var res_1 = random(75);
+                var res_1 = random(74);
                   res2 = 100 - res_1;
           
                     var t = 0;
@@ -980,7 +980,7 @@ let crime = document.getElementById('crime');
 
             
 
-                var result_1 = 25+random(75);
+                var result_1 = 25+random(74);
                 console.log('RES1      ++++' +result_1)
                   result2 = 100 - result_1;
           
@@ -988,6 +988,9 @@ let crime = document.getElementById('crime');
                     result_2 = random(result2);
                      t = result_1+result_2;
                     var result_3 = 100-(t);
+                    if(result_3 === 0){
+                        return
+                    }
             arr2.push(result_1,result_2,result_3);
 
             console.log('RES1      ++++' +arr2)
