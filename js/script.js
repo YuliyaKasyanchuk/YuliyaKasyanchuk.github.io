@@ -141,8 +141,8 @@ window.addEventListener('DOMContentLoaded', function() {
             personHair.style.backgroundSize = 'cover';
             personClothes.style.background = 'url("./img/clothes/construct/clothes-5.png") center no-repeat';
             personClothes.style.backgroundSize = 'cover';
-
             check = 'true';
+            this.checked = true;
             currentSlideForWomen(5);
             
 
@@ -155,6 +155,7 @@ window.addEventListener('DOMContentLoaded', function() {
             personClothes.style.background = 'url("./img/clothes/construct/clothes-1.png") center no-repeat';
             personClothes.style.backgroundSize = 'cover'
             check = 'false';
+            this.checked = false;
             currentSlide(1);
         }
     });
@@ -866,10 +867,14 @@ console.log(t)
     // СБРОСИТЬ РЕЗУЛЬТАТОВ
 
     let resetBtn = document.getElementById('reset');
-    	// customChar = document.querySelector('custom-char');
 
     resetBtn.addEventListener('click', function(){
-    	clickBtn= 1;
+        
+        female.checked = false;
+        male.checked = true;
+
+
+    	// clickBtn= 1;
     	main.classList.add('fadeOut');
         setTimeout(function() {
             main.style.display = 'none';
@@ -884,6 +889,14 @@ console.log(t)
             bio.value = '';
             name.value = '';
             age.value = '';
+
+            pesronSkin.style.background = 'url("./img/skin/skin-1.png") center no-repeat';
+            pesronSkin.style.backgroundSize = 'cover';
+            personHair.style.background = 'url("./img/hair/construct/hair-1.png") center no-repeat';
+            personHair.style.backgroundSize = 'cover';
+            personClothes.style.background = 'url("./img/clothes/construct/clothes-1.png") center no-repeat';
+            personClothes.style.backgroundSize = 'cover'
+
         }, 200);
     });
 
@@ -917,6 +930,7 @@ let voting = document.getElementById('voting');
                      t = res_1+res_2;
                     var res_3 = 100-(t);
 			arr.push(res_1,res_2,res_3);
+            console.log('ARR +++++' +arr)
             
 		for(let i = 0; i < progressBar.length; i++){
 
@@ -945,40 +959,42 @@ console.log('res'+resultCount[0].textContent)
 
 // ВМЕШАТЬСЯ В ВЫБОРЫ/////////////////////////////////////////////////////////////////////////
 let card = document.getElementsByClassName('main-cards-item');
-let crime = document.getElementById('crime'),
-	clickBtn = 1;
-var arr2 = [];
+let crime = document.getElementById('crime');
+	// clickBtn = 1;
+
 	
 
 	crime.addEventListener('click', function(){
-		if(clickBtn ===1){
+        // console.log('clickBtn ' + clickBtn);
+		// if(clickBtn ===1){
+            var max= 75,
+            summ2 = 0,
+            randomSumm2 = 0,
+            result = 0,
+            result2 = 0,
+            result_2 = 0,
+            arr2 = [];
 
-			var result_1 = parseInt(resultCount[0].textContent)+25,
-				result_2 = parseInt(resultCount[1].textContent),
-                result_3 = parseInt(resultCount[2].textContent),
-                random_1 = random(25),
-                random_2 = 25 - random_1;
-                if(result_2-random_1 < 0){
-                    result_3 -=random_1;
-                }
-                else if(result_2-random_1 > 0){
-                    result_2 -=random_1;
-                }
-                if(result_3-random_2 < 0){
-                    result_2 -=random_2;
-                }
-                
-                else if(result_3-random_2 > 0){
-                   result_3 -=random_2; 
-                }
-                arr2.push(result_1, result_2, result_3);
 
-                for(let i = 0; i < progressBar.length; i++){
+            
+
+                var result_1 = 25+random(75);
+                console.log('RES1      ++++' +result_1)
+                  result2 = 100 - result_1;
+          
+                    var t = 0;
+                    result_2 = random(result2);
+                     t = result_1+result_2;
+                    var result_3 = 100-(t);
+            arr2.push(result_1,result_2,result_3);
+
+            console.log('RES1      ++++' +arr2)
+        for(let i = 0; i < progressBar.length; i++){
 
             resultCount[i].innerHTML = arr2[i]  + ' %';
-            var result = parseInt(resultCount[i].textContent);
+            var result3 = parseInt(resultCount[i].textContent);
            
-            progressBar[i].style.height = (result*1.6) + 'px';
+            progressBar[i].style.height = (result3 * 1.6) + 'px';
             var max = Math.max.apply(null, arr2);
             if(arr2[i]=== max){
                 card[i].classList.add('main-cards-item-active');
@@ -989,24 +1005,49 @@ var arr2 = [];
             }
 
         }
-                // console.log('res_2 '+random_1)
-                // console.log('res_3 '+random_2)
+			// var result_1 = parseInt(resultCount[0].textContent)+25,
+			// 	result_2 = parseInt(resultCount[1].textContent),
+   //              result_3 = parseInt(resultCount[2].textContent),
+   //              random_1 = random(25),
+   //              random_2 = 25 - random_1;
+   //              if(result_2-random_1 < 0){
+   //                  result_3 -=random_1;
+   //              }
+   //              else if(result_2-random_1 > 0){
+   //                  result_2 -=random_1;
+   //              }
+   //              if(result_3-random_2 < 0){
+   //                  result_2 -=random_2;
+   //              }
+                
+   //              else if(result_3-random_2 > 0){
+   //                 result_3 -=random_2; 
+   //              }
+   //              arr2.push(result_1, result_2, result_3);
 
+   //              for(let i = 0; i < progressBar.length; i++){
 
+   //          resultCount[i].innerHTML = arr2[i]  + ' %';
+   //          var result = parseInt(resultCount[i].textContent);
+           
+   //          progressBar[i].style.height = (result*1.6) + 'px';
+   //          var max = Math.max.apply(null, arr2);
+   //          if(arr2[i]=== max){
+   //              card[i].classList.add('main-cards-item-active');
 
-    		// resultCount[0].innerHTML = result_1 + ' %';
-    		// progressBar[0].style.height = (result_1*1.6) + 'px';
-    		// resultCount[1].innerHTML = result_2 + ' %';
-    		// progressBar[1].style.height = (result_2*1.6) + 'px';
-      //       resultCount[2].innerHTML = result_3 + ' %';
-      //       progressBar[2].style.height = (result_3*1.6) + 'px';
+   //          }
+   //          else{
+   //              card[i].classList.remove('main-cards-item-active');
+   //          }
+
+   //      }      progressBar[2].style.height = (result_3*1.6) + 'px';
             
-    		clickBtn = 0;
+    		// clickBtn = 0;
     	
-    }
-    else{
-    	return false;
-    }
+    // }
+    // else{
+    // 	return false;
+    // }
 
 	});
 
