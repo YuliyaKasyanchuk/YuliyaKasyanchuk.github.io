@@ -895,7 +895,9 @@ console.log(t)
             personHair.style.background = 'url("./img/hair/construct/hair-1.png") center no-repeat';
             personHair.style.backgroundSize = 'cover';
             personClothes.style.background = 'url("./img/clothes/construct/clothes-1.png") center no-repeat';
-            personClothes.style.backgroundSize = 'cover'
+            personClothes.style.backgroundSize = 'cover';
+            currentSlide(1);
+
 
         }, 200);
     });
