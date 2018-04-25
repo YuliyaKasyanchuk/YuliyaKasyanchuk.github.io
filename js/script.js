@@ -905,7 +905,7 @@ console.log(t)
 
 // ЧЕСТНОЕ ГОЛОСОВАНИЕ/////////////////////////////////////////////////////////////////////////
 function random(num){
-    res = Math.floor(Math.random()*num)+1;
+    res = 1+Math.floor(Math.random()*(num-1));
     return res;
 }
 let voting = document.getElementById('voting');
