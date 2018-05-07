@@ -54,11 +54,11 @@ lightbox.option({
 
 
   
-      var scroll = new SmoothScroll('a[href*="#"]', {
-	speed: 1000, // Integer. How fast to complete the scroll in milliseconds
-	easing: 'easeInOutCubic'// Easing pattern to use
-});
+//       var scroll = new SmoothScroll('a[href*="#"]', {
+// 	speed: 1000, // Integer. How fast to complete the scroll in milliseconds
+// 	easing: 'easeInOutCubic'// Easing pattern to use
+// });
 
-window.onscroll = function() {
-		document.getElementById("scroll-top").style.transform = document.body.scrollTop > window.innerHeight/10 ? "scale(1)" : "scale(0)";
-}
+// window.onscroll = function() {
+// 		document.getElementById("scroll-top").style.transform = document.body.scrollTop > window.innerHeight/10 ? "scale(1)" : "scale(0)";
+// }
