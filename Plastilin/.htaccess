@@ -11,11 +11,13 @@ ExpiresActive On
 ExpiresDefault "access plus 1 days"
  
 
-ExpiresByType img/x-icon "access plus 1 month"
-ExpiresByType img/jpeg "access plus 4 weeks"
+ExpiresByType img/x-icon "access plus 10 minutes"
+ExpiresByType img/jpeg "access plus 10 minutes"
 ExpiresByType img/png "access plus 10 minutes"
+ExpiresByType img/icons/png "access plus 10 minutes"
+ExpiresByType img/icons/svg "access plus 10 minutes"
 ExpiresByType img/svg "access plus 10 minutes"
-ExpiresByType img/gif "access plus 43829 minutes"
+ExpiresByType img/gif "access plus 10 minutes"
 ExpiresByType application/x-shockwave-flash "access plus 2592000 seconds"
  
 
