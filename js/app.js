@@ -63,5 +63,6 @@ var link = $('.menu-link');
         link.toggleClass('menu-link_active');
         menu.slideToggle(300);
     });
+    new WOW().init();
 
 });
