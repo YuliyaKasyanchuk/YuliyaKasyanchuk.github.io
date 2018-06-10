@@ -23,9 +23,12 @@ function showPagin(){
         var current_link = 0; 
 
         var navigation_html = '<a class="previous_link" href="javascript:previous();">Prev</a>';
-        while(number_of_pages > current_link){  
+        while(number_of_pages > current_link){
+  
             navigation_html += '<a class="page_link" href="javascript:go_to_page(' + current_link +')" longdesc="' + current_link +'">'+ (current_link + 1) +'</a>';  
-            current_link++;  
+          
+            current_link++;
+
         } 
 
         navigation_html += '<a class="next_link" href="javascript:next();">Next</a>'; 
