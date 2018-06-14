@@ -361,7 +361,7 @@ var Pagination = {
         data = data || {};
         Pagination.size = data.size || 300;
         Pagination.page = data.page || 1;
-        Pagination.step = data.step/2 || 10;
+        Pagination.step = data.step/3 || 10;
     },
 
     // add pages by number (from [s] to [f])
