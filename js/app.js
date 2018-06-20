@@ -1,6 +1,37 @@
 window.addEventListener('DOMContentLoaded', function() {
 
+// DROPDOWN
 
+$('.fa-chevron-down').on('click', function(e){
+    e.preventDefault();
+  });
+    
+  $('.menu-list li').hover(function () {
+     clearTimeout($.data(this,'timer'));
+     $('ul',this).stop(true,true).slideDown(200);
+  }, function () {
+    $.data(this,'timer', setTimeout($.proxy(function() {
+      $('ul',this).stop(true,true).slideUp(200);
+    }, this), 100));
+  });
+// $('.drop-menu').on('click', function(event) {
+//     event.preventDefault();
+//     // $(this).removeAttr('href');
+//     var t = $(this);
+//     var element = t.closest('li');
+//     if (element.hasClass('open')) {
+//         element.removeClass('open');
+//         element.find('li').removeClass('open');
+//         element.find('ul').slideUp();
+//     } else {
+//         element.addClass('open');
+//         element.children('ul').slideDown();
+//         element.siblings('li').children('ul').slideUp();
+//         element.siblings('li').removeClass('open');
+//         element.siblings('li').find('li').removeClass('open');
+//         element.siblings('li').find('ul').slideUp();
+//     }
+// });
 
     // SCROLL
     var scroll = document.querySelector('.scroll-top');
