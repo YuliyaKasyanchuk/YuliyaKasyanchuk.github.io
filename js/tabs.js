@@ -569,7 +569,7 @@
  });
         // showTabs();
         // showPagin();
-init();
+// init();
 
 
 function showPagin(){
@@ -691,7 +691,7 @@ function go_to_page(page_num){
                
 
                showPagin();
-               init();
+               // init();
        // document.addEventListener('DOMContentLoaded', init, false);
 
         });
