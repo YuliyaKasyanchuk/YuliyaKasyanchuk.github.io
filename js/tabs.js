@@ -564,10 +564,10 @@
 // TABS
  $(document).ready(function() {
       showTabs();
-       showPagin();
+       // showPagin();
       // init();
  });
-        showTabs();
+        // showTabs();
         // showPagin();
 init();
 
