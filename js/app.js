@@ -164,6 +164,7 @@ $('.fa-chevron-down').on('click', function(e){
 
     };
     });
+
  if($(window).width() <= 991){
    
  $('.fa-chevron-down').on('click', function(e){

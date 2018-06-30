@@ -17,9 +17,8 @@
                 .eq(($(this)).index())
                 .addClass("active")
                ; 
-showTabs();
-               // showPagin();
-       // document.addEventListener('DOMContentLoaded', init, false);
+
+                init();
 
         });
 
