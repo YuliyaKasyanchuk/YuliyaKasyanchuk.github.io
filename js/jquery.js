@@ -83,9 +83,6 @@ $('.close').on('click', function(){
 $('.form-overlay').on('click', function(){
     $('.form-overlay').fadeOut();
 });
-// $('.overlay').fadeOut();
-// $(#form).children('.btn').event.preventDefault();
-// $('.btn').event.preventDefault();
 // ВАЛИДАЦИЯ ФОРМЫ
 $('#form').validate({
 
