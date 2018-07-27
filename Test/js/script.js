@@ -3,7 +3,7 @@
 // SLIDER
 window.onload = function() {
 
-// $(window).resize(function() {
+
 let slideIndex = 1,
     slides = document.getElementsByClassName('slider-item'),
     prev = document.querySelector('.prev'),
