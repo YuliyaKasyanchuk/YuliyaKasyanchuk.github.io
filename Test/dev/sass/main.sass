@@ -66,11 +66,13 @@
 			.icon
 				display: inline-block
 				width: fit-content
-				max-width: 18rem
+				max-width: 25rem
 				text-align: left
 				margin-right: 6rem
 				&:nth-child(even)
 					margin-right: 0
+				@include respond-to(prelarge)
+					max-width: 18rem
 				@include respond-to(desktop)
 					width: 40%
 					max-width: 40%
@@ -189,6 +191,23 @@
 			font: 400 1.6rem/3rem $description-font
 			color: $main-color
 			+trans
+			&::-ms-expand
+				background: transparent
+				border: none
+				outline: none
+			&:-moz-focusring
+				color: transparent !important
+				text-shadow: 0 0 0 #000 !important
+				background-image: none !important
+				border: 0
+			&::-moz-focus-inner 
+				color: transparent !important
+				text-shadow: 0 0 0 #000 !important
+				background-image: none !important
+				border: 0
+    
+
+   
 		.input-description
 			text-align: left
 			font: 400 1.3rem/2rem $description-font
@@ -211,7 +230,7 @@
 			margin-bottom: 1rem
 			width: 50%
 		.details-icon
-			width: fit-content
+			// width: fit-content
 			margin: 0 auto
 		.description
 			line-height: 3rem
@@ -251,8 +270,8 @@
 			// 	display: inline-block
 			// 	position: absolute
 			// 	z-index: 1
-			.decor
-				display: none
+			// .decor
+			// 	display: none
 			.tabs
 				margin-right: 5rem
 				cursor: pointer
@@ -268,6 +287,7 @@
 				// padding: 2rem
 				width: 7rem
 				height: 7rem
+				background-color: transperent
 				// border-radius: 50%
 				// border: 1px solid red
 				// background-color: transparent
@@ -294,7 +314,7 @@
 					position: relative
 					z-index: 1
 					display: block
-					padding: 1.5rem
+					// padding: 1.5rem
 					// width: 100%
 					// height: 100%
 				.decor
@@ -398,10 +418,10 @@
 .decorated
 	background-color: $blue
 	box-shadow:  0px 10px 25px rgba(61, 59, 238, 0.3074)
-	// // padding: 1rem
+	padding: 1.5rem
 	border-radius: 50%
-	// width: 7rem
-	// height: 7rem
+	width: 7rem
+	height: 7rem
 	img
 		filter: invert(1)
 .testimonial

@@ -220,7 +220,7 @@ smMenuItem.addEventListener('click', function(event) {
 
     window.onscroll = function() {
         var scrolled = window.pageYOffset;
-        if (scrolled > 50) {
+        if (scrolled > 0) {
             scroll.style.transform = 'scale(1)';
         } else {
             scroll.style.transform = 'scale(0)';
