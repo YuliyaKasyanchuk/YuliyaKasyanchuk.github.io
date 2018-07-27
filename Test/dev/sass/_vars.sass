@@ -1,0 +1,318 @@
+
+
+
+// colors
+
+$white: #ffffff
+$blue: #3D3BEE
+$main-color: #2D3E50
+$dark-color: #080E1F
+$pink: #E8225A
+$light-grey: #A6A5EE
+$light: #F9FBFF
+$grey: #6D7986
+$dark-grey: #242424
+
+$dark-blue: #26697d
+$footer-color: #262626
+$black: #000000
+$orange: #c78030
+$dark-orange: #774c1c
+
+
+$yellow: #ffd901
+$green: #00FF7F
+
+$dark-pink: #ea8992
+$bg-red: rgba(50,1,5,0.59)
+$header-color: #82c6d5
+$red: #dd2131
+$dark-red: #b11a27
+$decor-font: 'CenturyGothic-Bold'
+$decorated-font: 'Comfortaa', cursive
+
+
+//fonts
+
+$font: 'Barlow Semi Condensed', sans-serif;
+$description-font: 'Muli', sans-serif;
+
+=font($name: 'Barlow Semi Condensed',$style: normal,$weight: normal)
+	font-family: $name, sans-serif
+	font-weight: $weight
+	font-style: $style
+
+=description-font($name: 'Muli',$style: normal,$weight: normal)
+	font-family: $name, sans-serif
+	font-weight: $weight
+	font-style: $style
+
+ //heights
+
+// $headerHeight: 80px
+// $blockheight: 80vh
+
+//mixins
+
+=flex($display: flex, $flow: row nowrap, $justify: center, $align: center)
+	display: $display
+	flex-flow: $flow 
+	justify-content: $justify
+	align-items: $align
+
+=trans($speed: .3s,$easing: linear)
+	transition: all $speed $easing
+
+// =nobg
+// 	background-color: rgba(0,0,0,0)	
+
+// =border($color: white,$width: 1px)
+//   border: $width solid $color
+
+// =bg($position: center center, $bgsize: cover,$repeat: false)
+// 	background-position: $position !important	
+// 	background-size: $bgsize !important
+// 	@if $repeat
+// 		background-repeat: repeat !important
+// 	@else 
+// 		background-repeat: no-repeat !important
+
+// =keyframes($name)
+//   @-webkit-keyframes #$name
+//     @content
+//   @-moz-keyframes #$name
+//     @content
+//   @-ms-keyframes #$name
+//     @content
+//   @keyframes #$name
+//     @content
+	
+// //media
+$mobil: 480px
+$smaller: 700px
+$small: 770px
+$medium: 991px
+$desktop: 1170px
+$prelarger: 1260px
+$prelarge: 1600px
+$large: 10000px
+
+// // media queries mixins
+
+@mixin respond-to($media) 
+	@if $media == mobil 
+		@media only screen and (max-width: $mobil) 
+			@content 
+
+	@else if $media == smaller 
+		@media only screen and (max-width: $smaller) 
+			@content
+	
+	@else if $media == small 
+		@media only screen and (max-width: $small) 
+			@content 
+
+	@else if $media == tablet 
+		@media only screen and (max-width: $tablet) 
+			@content
+
+	@else if $media == medium 
+		@media only screen and (max-width: $medium)  
+			@content
+
+	@else if $media == desktop 
+		@media only screen and (max-width: $desktop)  
+			@content
+
+	@else if $media == prelarger 
+		@media only screen and (max-width: $prelarger)  
+			@content
+
+	@else if $media == prelarge 
+		@media only screen and (max-width: $prelarge)  
+			@content
+
+	@else if $media == large 
+		@media only screen and (max-width: $large)  
+			@content
+
+//@include respond-to(medium) 
+
+=keyframes($name)
+	@-webkit-keyframes $name
+		@content
+	@-moz-keyframes $name
+		@content
+	@-ms-keyframes $name
+		@content
+	@keyframes $name
+		@content
+
+.fadeSlide 
+	-webkit-animation-name: fadeSlide
+					animation-name: fadeSlide
+	-webkit-animation-duration: 3.0s
+					animation-duration: 3.0s
+	-webkit-animation-name: fadeSlide
+	-webkit-animation-duration: 3.0s
+
+@-webkit-keyframes fadeSlide 
+	0% 
+		opacity: 0.1
+		visibility: hidden
+
+
+	50%
+		opacity: 1
+		visibility: visible
+
+
+	100% 
+		opacity: 0
+		visibility: hidden
+	 
+	
+
+@keyframes fadeSlide 
+	0% 
+		opacity: 0.1
+		visibility: hidden
+
+
+	50%
+		opacity: 1
+		visibility: visible
+
+
+	100% 
+		opacity: 0
+		visibility: hidden
+
+.fade 
+	-webkit-animation-name: fade
+	animation-name: fade
+	-webkit-animation-duration: 3s
+	animation-duration: 3s
+	-webkit-animation-name: fade
+	-webkit-animation-duration: 3s
+
+@-webkit-keyframes fade 
+	0% 
+		opacity: 0.1
+		visibility: hidden
+
+	100% 
+		opacity: 1
+		visibility: visible
+
+
+@keyframes fade 
+	0% 
+		opacity: 0.1
+		visibility: hidden
+
+	100% 
+		opacity: 1
+		visibility: visible
+
+.appearFromLeft
+	-webkit-animation-name: appearFromLeft
+	animation-name: appearFromLeft
+	-webkit-animation-duration: 2s
+	animation-duration: 2s
+	-webkit-animation-name: appearFromLeft
+	-webkit-animation-duration: 2s
+
+@-webkit-keyframes appearFromLeft
+	0% 
+		margin-left: -100%
+
+	100% 
+		margin-left: 0
+
+
+@keyframes appearFromLeft 
+	0% 
+		margin-left: -100%
+
+	100% 
+		margin-left: 0
+
+.fadeOut
+	-webkit-animation-name: fadeOut
+	animation-name: fadeOut
+	-webkit-animation-duration: 2s
+	animation-duration: 2s
+	-webkit-animation-name: fadeOut
+	-webkit-animation-duration: 2s
+
+
+@keyframes fadeOut 
+	0% 
+		opacity: 1
+		visibility: visible
+
+	100% 
+		opacity: 0
+		visibility: hidden
+	
+ 
+
+@-webkit-keyframes fadeOut  
+	0% 
+		opacity: 1
+		visibility: visible
+
+	100% 
+		opacity: 0
+		visibility: hidden
+
+.fadeIn
+	-webkit-animation-name: fadeIn
+	animation-name: fadeIn
+	-webkit-animation-duration: 2s
+	animation-duration: 2s
+	-webkit-animation-name: fadeIn
+	-webkit-animation-duration: 2s
+
+
+@keyframes fadeIn 
+	0% 
+		opacity: 0
+		visibility: hidden
+
+	100% 
+		opacity: 1
+		visibility: visible
+	
+ 
+
+@-webkit-keyframes fadeIn  
+	0% 
+		opacity: 0
+		visibility: hidden
+
+	100% 
+		opacity: 1
+		visibility: visible
+
+.shadow
+	-webkit-animation-name: shadow
+	animation-name: shadow
+	-webkit-animation-duration: 3s
+	animation-duration: 3s
+	-webkit-animation-name: shadow
+	-webkit-animation-duration: 3s
+	@keyframes shadow 
+		from 
+			box-shadow: 0 0 35px 5px $main-color
+
+		to 
+			box-shadow: 0 0 50px 10px $main-color
+	@-webkit-keyframes shadow 
+		from 
+			box-shadow: 0 0 35px 5px $main-color
+
+		to 
+			box-shadow: 0 0 50px 10px $main-color
+

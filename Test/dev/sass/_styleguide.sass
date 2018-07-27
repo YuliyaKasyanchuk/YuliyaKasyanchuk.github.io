@@ -1,0 +1,126 @@
+@import "vars.sass"
+
+//General
+
+html
+	font-size: 100%
+	width: 100%
+	height: 100%
+	@include respond-to(large)
+		font-size: 50%
+	@include respond-to(prelarge)
+		font-size: 62.5%
+	@include respond-to(desktop)
+		font-size: 50%
+	@include respond-to(mobil)
+		font-size: 50%
+
+*
+	outline: none 
+	box-sizing: border-box
+
+textarea
+	resize: none
+
+.hidden
+	display: none
+
+body
+	margin: 0
+	min-height: 100vh
+	min-width: 300px
+	position: relative
+	font-size: 16px
+	line-height: 16px
+	width: 100%
+	height: 100%
+	font-weight: normal
+	+font
+	color: $main-color
+	cursor: default
+	overflow-x: hidden
+	text-align: center
+
+
+ul
+	list-style: none
+	padding-left: 0px
+	margin: 0
+
+a
+	text-decoration: none
+	+trans(.3s)
+	&:hover
+		opacity: 0.8
+
+.bold
+	font-weight: bold
+.section-title
+	font-size: 3rem
+	text-transform: uppercase
+h1,h2,h3,h4,h5,h6
+	margin: 0
+	padding: 0
+
+h2
+	color: $main-color
+	font-size:  5.2rem
+	line-height: 6rem
+	text-align: left
+	overflow: hidden
+	+font
+	font-weight: bold
+	margin-bottom: 3.4rem
+h3
+	color: $main-color
+	font-size:  3.2rem
+	line-height: 4rem
+	text-align: center
+h4
+	color: $main-color
+	+description-font
+	font-weight: 600
+	font-size:  2.2rem
+	line-height: 3rem
+	text-align: left
+	overflow: hidden
+	
+	
+	
+
+.wrapper
+	width: 100%
+	margin: 0 auto
+	min-height: 100%
+	height: auto !important
+	margin: 0 auto
+	border: 1px solid red
+.middle
+	max-width: 1280px
+	margin: 0 auto
+	width: 100%
+	border: 5px solid yellow
+p
+	color: $main-color
+	font-size: 1.8rem
+	margin: 0
+	padding-bottom: 2rem
+
+.btn
+	background-color: $blue
+	color: $white
+	font-size: 1.8rem
+	line-height: 3rem
+	min-width: 300px
+	width: fit-content
+	+trans
+	+flex
+	justify-content: space-between
+	padding: 2rem 3rem 2rem 3rem
+	border-radius: 4px
+	position: relative
+	&:hover
+		opacity: 0.9
+	img
+		padding-left: 3.3rem
+

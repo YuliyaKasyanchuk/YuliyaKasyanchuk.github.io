@@ -1,0 +1,141 @@
+@import "vars.sass"
+@import "styleguide.sass"
+	
+// HEADER
+.header
+	background-color: transparent
+	width: 100%
+	+flex
+	justify-content: space-between
+	margin-bottom: 11rem
+	@include respond-to(small)
+		flex-direction: column
+		align-items: flex-start
+		position: relative
+	&-menu
+		margin: 0
+		padding: 0
+		@include respond-to(small)
+			display: none
+		&-item
+			display: inline-block
+			margin-right: 2.85rem
+			&:last-child
+				margin-right: 0
+			a
+				color: $white
+				+font
+				font-size: 1.6rem
+				line-height: 3rem
+				display: block
+	&-btn
+		+font
+		font-size: 1.6rem
+		line-height: 3rem
+		color: $white
+		border: 1px solid $white
+		border-radius: 2px
+		padding: 0.625rem 1rem
+		@include respond-to(small)
+			display: none
+		&:hover
+			background-color: $white
+			border: 1px solid $white
+			opacity: 1
+			color: $main-color
+.menu-link
+	display: block
+	width: 30px
+	height: 30px
+	background-color: transparent
+	position: absolute
+	top: 0rem
+	right: 0rem
+	z-index: 4
+	display: none
+	&:hover
+		opacity: 1
+	@include respond-to(small)
+		display: block
+	@include respond-to(mobil)
+		top: 0rem
+		right: 0rem
+	span
+		content: ''
+		margin-top: -1px
+		transition: all 0.2s
+		display: block
+		height: 2px
+		width: 30px
+		background-color: $white
+		position: absolute
+		left: 50%
+		transform: translateX(-50%)
+		top: 50%
+		&:before
+			content: ''
+			transition: all 0.2s
+			display: block
+			height: 2px
+			width: 30px
+			background-color: $white
+			position: absolute
+			left: 30%
+			top: 50%
+			margin-top: -10px
+			margin-left: -9px
+		&:after 
+			content: ''
+			transition: all 0.2s
+			display: block
+			height: 2px
+			width: 30px
+			background-color: $white
+			position: absolute
+			left: 30%
+			top: 50%
+			margin-top: 8px
+			margin-left: -9px
+	&_active
+		span 
+			background-color: transparent
+			&:before 
+				-webkit-transform: rotate(45deg)
+				-ms-transform: rotate(45deg)
+				-o-transform: rotate(45deg)
+				transform: rotate(45deg)
+				margin-top: 0
+				width: 25px
+			&:after 
+				-webkit-transform: rotate(-45deg)
+				-ms-transform: rotate(-45deg)
+				-o-transform: rotate(-45deg)
+				transform: rotate(-45deg)
+				margin-top: 0
+				width: 25px
+
+.sm-header-menu
+	+trans
+	position: absolute
+	left: -100vw
+	top: 10rem
+	display: flex
+	flex-direction: column
+	padding-top: 0
+	padding: 3rem 0
+	background-color: $black
+	width: 100%
+	z-index: 2
+	.header-menu-item
+		margin: 0
+		text-align: center
+		margin-bottom: 1rem
+		display: block
+		a
+			font: 400 2.8rem/5rem $font
+		.header-btn
+			width: fit-content
+			margin: 0 auto
+.collapsed
+	left: 0
+	+trans
