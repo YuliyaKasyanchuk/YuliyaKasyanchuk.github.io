@@ -16,10 +16,26 @@
 		margin: 0
 		padding: 0
 		@include respond-to(small)
-			display: none
+			+trans
+			position: absolute
+			left: -100vw
+			top: 10rem
+			display: flex
+			flex-direction: column
+			padding-top: 0
+			padding: 3rem 0
+			background-color: $dark-color
+			width: 100%
+			z-index: 2
 		&-item
 			display: inline-block
 			margin-right: 2.85rem
+			@include respond-to(small)
+				margin: 0
+				text-align: center
+				margin-bottom: 1rem
+				opacity: 0
+				font-size: 0
 			&:last-child
 				margin-right: 0
 			a
@@ -28,6 +44,8 @@
 				font-size: 1.6rem
 				line-height: 3rem
 				display: block
+				@include respond-to(small)
+					font: 400 2.8rem/5rem $font
 	&-btn
 		+font
 		font-size: 1.6rem
@@ -113,29 +131,10 @@
 				transform: rotate(-45deg)
 				margin-top: 0
 				width: 25px
-
-.sm-header-menu
-	+trans
-	position: absolute
-	left: -100vw
-	top: 10rem
-	display: flex
-	flex-direction: column
-	padding-top: 0
-	padding: 3rem 0
-	background-color: $black
-	width: 100%
-	z-index: 2
-	.header-menu-item
-		margin: 0
-		text-align: center
-		margin-bottom: 1rem
-		display: block
-		a
-			font: 400 2.8rem/5rem $font
-		.header-btn
-			width: fit-content
-			margin: 0 auto
+		margin: 0 auto
 .collapsed
 	left: 0
 	+trans
+	.header-menu-item
+		+trans
+		opacity: 1

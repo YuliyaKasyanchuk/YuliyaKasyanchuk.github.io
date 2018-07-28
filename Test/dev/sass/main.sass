@@ -17,6 +17,8 @@
 	background-position: 0 0
 	background-size: cover
 	padding: 1.875rem 3.75rem
+	@include respond-to(medium)
+		padding: 5rem
 	@include respond-to(mobil)
 		padding: 1.875rem 2rem
 	.btn
@@ -25,12 +27,11 @@
 			width: 100%
 .work-details
 	padding: 14rem 16rem
-	+flex
 	@include respond-to(prelarger)
 		padding: 14rem 12rem
 	@include respond-to(medium)
-		flex-direction: column
-	@include respond-to(medium)
+		padding: 5rem
+	@include respond-to(mobil)
 		padding: 5rem 2rem
 	
 	&-about
@@ -48,7 +49,9 @@
 		.description
 			padding-right: 4rem
 	&-more
-		@include respond-to(medium)
+		@include respond-to(large)
+			width: 50%
+		@include respond-to(prelarge)
 			width: 100%
 		@include respond-to(small)
 			margin: 0 auto
@@ -65,17 +68,25 @@
 				display: inline-block
 				width: fit-content
 				max-width: 25rem
+				min-height: 21rem
 				text-align: left
 				margin-right: 6rem
+				vertical-align: top
+				@include respond-to(prelarge)
+					margin-right: 0
 				&:nth-child(even)
 					margin-right: 0
+					@include respond-to(large)
+						margin-right: 6rem
 				@include respond-to(prelarge)
-					max-width: 18rem
+					width: 40%
+					max-width: 50%
 				@include respond-to(desktop)
 					width: 40%
 					max-width: 40%
 					min-height: 19rem
 					vertical-align: top
+					margin-right: 4rem
 					&:nth-child(even)
 						margin-right: 0rem
 					&:nth-child(even)
@@ -99,6 +110,10 @@
 						text-align: center
 						padding-bottom: 0
 						min-height: 0
+	.middle
+		+flex
+		@include respond-to(medium)
+			flex-direction: column
 		.btn
 			padding-left: 4rem
 			@include respond-to(small)
@@ -118,8 +133,10 @@
 		margin: 0 auto
 		max-width: 64rem
 	@include respond-to(medium)
-		padding: 5rem 2rem
+		padding: 5rem
 		vertical-align: top
+	@include respond-to(mobil)
+		padding: 5rem 2rem
 	&-map
 		margin-top: 8rem
 
@@ -187,6 +204,10 @@
 			font: 400 1.6rem/3rem $description-font
 			color: $main-color
 			+trans
+			@include respond-to(medium)
+				width: 50%
+			@include respond-to(mobil)
+				width: 80%
 			&::-ms-expand
 				background: transparent
 				border: none
@@ -364,9 +385,11 @@
 	background-position: 0 0
 	background-size: cover
 	padding-bottom: 14rem
+	padding: 12rem 0
+	@include respond-to(medium)
+		padding: 5rem 2rem
 	.more-info
 		+flex
-		padding: 14rem 16rem 3rem 16rem
 		@include respond-to(medium)
 			padding: 5rem 2rem
 		.card
@@ -394,6 +417,10 @@
 				color: $white
 	.slider-block
 		padding: 0 6rem
+		max-width: 1280px
+		margin: 0 auto
+		@include respond-to(mobil)
+			padding: 0
 		h3
 			color: $white
 			font-weight: 500
@@ -594,7 +621,9 @@
 		display: -webkit-box
 		-webkit-line-clamp: 3
 		-webkit-box-orient: vertical
-footer
+.footer
+	width: 100%
+	background-color: $dark-color
 	.middle
 		background-color: $dark-color
 		+flex
