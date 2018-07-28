@@ -176,7 +176,7 @@ function animate(draw, duration) {
 };
 
 var menuItem = document.getElementsByClassName('header-menu')[0],
-    smMenuItem = document.getElementsByClassName('sm-header-menu')[0];
+    smMenuItem = document.getElementsByClassName('header-menu')[0];
 
 menuItem.addEventListener('click', function(event) {
     event.preventDefault();
