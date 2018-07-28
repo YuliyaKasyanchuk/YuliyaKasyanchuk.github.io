@@ -175,8 +175,8 @@ function animate(draw, duration) {
 
 };
 
-var menuItem = document.getElementsByClassName('header-menu')[0],
-    smMenuItem = document.getElementsByClassName('header-menu')[0];
+var menuItem = document.getElementsByClassName('header-menu')[0];
+    // smMenuItem = document.getElementsByClassName('header-menu')[0];
 
 menuItem.addEventListener('click', function(event) {
     event.preventDefault();
@@ -196,23 +196,23 @@ menuItem.addEventListener('click', function(event) {
     }
 });
 
-smMenuItem.addEventListener('click', function(event) {
-    event.preventDefault();
+// smMenuItem.addEventListener('click', function(event) {
+//     event.preventDefault();
 
-    let target = event.target.getAttribute('href'),
-        linkToScroll = document.querySelectorAll('[href^="#"]'),
-        idToScroll = document.querySelectorAll('*[id]'),
-        str = target.slice(1);
+//     let target = event.target.getAttribute('href'),
+//         linkToScroll = document.querySelectorAll('[href^="#"]'),
+//         idToScroll = document.querySelectorAll('*[id]'),
+//         str = target.slice(1);
 
-    for (let i = 0; i < idToScroll.length; i++) {
-        let idToScrollThis = idToScroll[i];
-        if (str === idToScrollThis.id) {
-            animate(function(timePassed) {
-                window.scrollBy(0, (idToScrollThis.getBoundingClientRect().top + 20) / 20);
-            }, 2000);
-        }
-    }
-});
+//     for (let i = 0; i < idToScroll.length; i++) {
+//         let idToScrollThis = idToScroll[i];
+//         if (str === idToScrollThis.id) {
+//             animate(function(timePassed) {
+//                 window.scrollBy(0, (idToScrollThis.getBoundingClientRect().top + 20) / 20);
+//             }, 2000);
+//         }
+//     }
+// });
 
 // SCROLL TOP
 
