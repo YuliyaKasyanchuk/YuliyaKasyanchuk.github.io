@@ -18,19 +18,30 @@ window.addEventListener('DOMContentLoaded', function() {
     });
 
 
+// SCROLL
+
+    // window.onscroll = function() {
+    //     var raw_x_position = window.pageYOffset || document.documentElement.scrollTop;
+
+    //     document.getElementById("scroll-top").style.transform =  raw_x_position  > window.innerHeight / 10 ? "scale(1)" : "scale(0)";
+    // }
 
 
-    window.onscroll = function() {
-        var raw_x_position = window.pageYOffset || document.documentElement.scrollTop;
+    // var scroll = new SmoothScroll('a[href="#scroll-top"]', {
+    //     speed: 1000, // Integer. How fast to complete the scroll in milliseconds
+    //     easing: 'easeInOutCubic' // Easing pattern to use
+    // });
+var scroll = new SmoothScroll('a[href="#header"]', {
+    speed: 1000, // Integer. How fast to complete the scroll in milliseconds
+    easing: 'easeInOutCubic'// Easing pattern to use
+});
 
-        document.getElementById("scroll-top").style.transform =  raw_x_position  > window.innerHeight / 10 ? "scale(1)" : "scale(0)";
-    }
-
-
-    var scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 1000, // Integer. How fast to complete the scroll in milliseconds
-        easing: 'easeInOutCubic' // Easing pattern to use
-    });
+window.onscroll = function() {
+        document.getElementById("scroll-top").style.transform = window.pageYOffset || document.documentElement.scrollTop ? "scale(1)" : "scale(0)";
+}
+// $(function(){
+//   $.scrollUp();
+// });
 
 
 
@@ -2652,7 +2663,7 @@ console.log($('.tabs-header div').eq(tabIndex))
         slideMargin:0,
         enableDrag: false,
         currentPagerPosition:'left',
-        // adaptiveHeight: 'false',
+        adaptiveHeight: 'true',
         
         onSliderLoad: function(el) {
             el.lightGallery({
