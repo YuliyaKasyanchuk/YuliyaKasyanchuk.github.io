@@ -2632,6 +2632,7 @@ console.log($('.tabs-header div').eq(tabIndex))
       speed: 300,
       slidesToShow: 1,
       autoplay: true,
+      arrows: false,
       adaptiveHeight: true
   });
 
