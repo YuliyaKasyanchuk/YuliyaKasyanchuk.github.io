@@ -2777,10 +2777,6 @@ $('#form').validate({
         link.toggleClass('menu-link_active');
         menu.slideToggle(300);
     });
-    // link_active.click(function() {
-    //     link.toggleClass('menu-link_active');
-    //     menu.slideToggle(300);
-    // });
      });
 $(document).ready(function() {
 var items = $('.tab-content.active').children('.content').children().size();
